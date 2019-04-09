@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ImproperlyConfigured: The SECRET_KEY settings must not be empty 에러가 발생하는 이유
+title: ImproperlyConfigured The SECRET_KEY settings must not be empty 에러가 발생하는 이유
 tags: django
 comments: true
 ---
