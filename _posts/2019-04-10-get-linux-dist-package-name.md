@@ -10,6 +10,6 @@ uname -a
 ```
     
 ```
-cat /etc/*relase
+cat /etc/*release
 ```
     
