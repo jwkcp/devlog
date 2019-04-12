@@ -15,12 +15,14 @@ comments: true
 > /.well-known/는 정해진 URI 스키마 상에서 잘 알려진 위치들(well-known locations)의 경로 프리픽스를 정의해 줍니다.
      
 뭔 말인가 싶지만 곰곰히 들어다보면 그 의미가 보이는 것 같습니다.      
-우리가 웹서버를 통해 뭔가를 서비스할 때 습관처럼 항상 해야하거나 제공해야하는 정보가 있습니다. 검색엔진 봇을 제어하는 robots.txt도 그렇고, 파비콘 favicon.ico나 favicon.jpg 도 그렇습니다. 사이트를 작성한 사람이 누군지 나타내는 [humans.txt](http://humanstxt.org/)도 있구요. 보안 취약점이 발견되었을 때 연락할 수 있도록 제공하는 [security.txt](https://securitytxt.org/) 파일도 우리가 웹서비스에서 흔히 제공하는 정보입니다. 이런 파일을 어디에 둬야 할까요? RFC5785는 이런 리소스를 .well-known 디렉토리에 두기를 제안하고 있습니다.   
+우리가 웹서버를 통해 뭔가를 서비스할 때 습관처럼 항상 해야하거나 제공해야 하는 정보가 있습니다. 검색엔진 봇을 제어하는 robots.txt도 그렇고, 파비콘 favicon.ico나 favicon.jpg 도 그렇습니다. 사이트를 작성한 사람이 누군지 나타내는 [humans.txt](http://humanstxt.org/)도 있구요. 보안 취약점이 발견되었을 때 연락할 수 있도록 제공하는 [security.txt](https://securitytxt.org/) 파일도 우리가 웹서비스에서 흔히 제공하는 정보입니다. 이런 파일을 어디에 둬야 할까요? RFC5785는 이런 리소스를 .well-known 디렉토리에 두기를 제안하고 있습니다.   
      
 몇 가지 예를 더 들어볼까요?    
 iOS 앱을 개발할 때 유니버셜 링크를 쓸 때도 ```.well-known``` 디렉토리에 [apple-app-site-association](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)을 넣고요. 안드로이드에서는 웹사이트에 공개, 인증관련 내용을 기록하는 [디지털 에셋 링크](https://developers.google.com/digital-asset-links/v1/getting-started)도 ```.well-known``` 디렉토리에 assetlinks.json을 넣습니다. 이렇게 보니 그냥 누가 아무 디렉토리 이름이 만들어서 막 쓰는게 아니라, 공식적으로 널리 애용(?)되고 있다는 걸 아시겠지요?    
      
-참 하나 중요한 예를 빼먹었네요. 무료 SSL인증서를 발급하게 해주는 고마운 서비스 Let's Encrypt도 이 폴더를 이용합니다. Let's Encrypt를 통해 SSL 인증서를 발급받는 과정에서 .well-known/acme-challenge 폴더가 생성되지요.
+참 하나 중요한 예를 빼먹었네요. 무료 SSL인증서를 발급하게 해주는 고마운 서비스 Let's Encrypt도 이 폴더를 이용합니다. Let's Encrypt를 통해 SSL 인증서를 발급받는 과정에서 .well-known/acme-challenge 폴더가 생성되지요.   
+    
+도움이 되셨나요?   
 
 ---
 
