@@ -29,6 +29,13 @@ htaccess는 "hypertext access"의 약자다. 파일명 앞의 점은 숨김 파�
     
 ---
 
+**함께보면 좋은 글:**   
+* [SSL 인증서는 도대체 뭔가요?](https://devlog.jwgo.kr/2019/04/12/what-is-ssl/)
+* [mod_rewrite는 도대체 뭔가요?](https://devlog.jwgo.kr/2019/04/12/what-is-mod-rewrite/)
+* [.well-known 디렉토리는 도대체 뭔가요?](https://devlog.jwgo.kr/2019/04/12/well-known-directory/)
+    
+---
+
 참고링크:    
 * [https://httpd.apache.org/docs/2.2/en/howto/htaccess.html](https://httpd.apache.org/docs/2.2/en/howto/htaccess.html)
 * [https://www.ostraining.com/blog/coding/what-are-htaccess-files/](https://www.ostraining.com/blog/coding/what-are-htaccess-files/)

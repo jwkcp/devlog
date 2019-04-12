@@ -30,3 +30,10 @@ CA 중에서는 VeriSign이나 Codomo와 같이 유로 SSL인증서를 발급하
     
 네이버(naver.com)와 쿠팡(coupang.com)은 Sectigo의 Sectigo RSA Organization Validation Secure Server CA 인증서를 쓰고 있네요. Comodo에서 변경된 브랜드입니다. 다음(daum.net)은 Thawte TLS RSA CA G1을 사용하고 있어요. DIGICERT라는 CA에서 발급한 인증서입니다. 여러분이 자주가는 사이트의 인증서는 어떤 CA에서 발급한 것을 쓰고 있는지 한번 확인해 보세요. ^^   
     
+---
+
+**함께보면 좋은 글:**   
+* [mod_rewrite는 도대체 뭔가요?](https://devlog.jwgo.kr/2019/04/12/what-is-mod-rewrite/)
+* [.htaccess 파일은 도대체 뭔가요?](https://devlog.jwgo.kr/2019/04/11/what-is-htaccess/)
+* [.well-known 디렉토리는 도대체 뭔가요?](https://devlog.jwgo.kr/2019/04/12/well-known-directory/)
+
