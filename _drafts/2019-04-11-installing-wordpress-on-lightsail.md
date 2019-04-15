@@ -80,9 +80,15 @@ $ mysql_secure_installation
      
 ### PHP 설치
 ```
+# 로케일 설정을 POSIX(C) UTF-8로 변경한다. 로케일 설정이 없거나 POSIX(C) 표준으로 되어 있지 않으면 에러가 발생하는 명령이 있을 수 있다.
+$ LC_ALL=C.UTF-8    
+    
 # PHP 7.3 설치를 위한 ppa 저장소 등록
-# 이 ppa를 등록하지 않고 그냥 php를 설치하면 7.0 버전이 설치되는데 워드프레스 권장 버전이 7.3이다. 7.0도 가능하긴 하나 7.3으로 하길 권장한다.
-$ LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php
+# 이 ppa를 등록하지 않고 그냥 php를 설치하면 7.0 버전이 설치되는데 워드프레스 권장 버전이 7.3이다. 7.0도 가능하긴 하나 7.3으로 하길 권장한다.   
+$ sudo add-apt-repository ppa:ondrej/php
+
+# 아래 명령으로 추가된 저장소 관련 내용을 업데이트합니다.
+$ sudo apt udpate
 
 # PHP와 관련 라이브러리 설치
 $ sudo apt install php7.3 php7.3-cli php7.3-common libapache2-mod-php php-mcrypt php-mysql

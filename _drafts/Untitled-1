@@ -1,0 +1,7 @@
+호스팅 방화벽
+우분투 방화벽
+
+가상호스팅 설정에서 SSLEngine on으로 설정 후 키파일 링크
+SSLCertificateFile      /etc/letsencrypt/live/test2.jwgo.kr/cert.pem
+SSLCertificateKeyFile   /etc/letsencrypt/live/test2.jwgo.kr/privkey.pem
+SSLCertificateChainFile /etc/letsencrypt/live/test2.jwgo.kr/chain.pem
