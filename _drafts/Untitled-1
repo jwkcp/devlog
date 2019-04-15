@@ -5,3 +5,14 @@
 SSLCertificateFile      /etc/letsencrypt/live/test2.jwgo.kr/cert.pem
 SSLCertificateKeyFile   /etc/letsencrypt/live/test2.jwgo.kr/privkey.pem
 SSLCertificateChainFile /etc/letsencrypt/live/test2.jwgo.kr/chain.pem
+
+a2enmod ssl
+
+a2ensite default-ssl.conf
+
+a2enmod rewrite
+리다이렉트 설정
+
+        RewriteEngine on
+        RewriteCond %{HTTPS} off
+        RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]   <- 좀더 옵션 정규식 확인해볼 것. 맨뒤 조건문도
