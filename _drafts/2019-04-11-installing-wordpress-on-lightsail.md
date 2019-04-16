@@ -60,13 +60,17 @@ $ sudo systemctl restart apache2
      
 방화벽 설정을 체크하고 "Apache Full"이 80, 443/tcp가 열려있는지 확인합니다. 열려있지 않다면 ```sudo ufw allow in "Apache Full"``` 명령으로 열어줍니다.   
 ```
+# 현재 설정 보기
+$ sudo ufw status verbose
+
 # 허용 프로그램 목록
 $ sudo ufw app list
     
 # "Apache Full" 세부 사항
 $ sudo ufw app info "Apache Full"
 ```
-```http://your_server_IP_address```를 브라우저에 입력해 제대로 아파치 웹서버가 도는지 확인합니다.
+    
+이제 ```http://your_server_IP_address```를 브라우저에 입력해 제대로 아파치 웹서버가 도는지 확인합니다.
 
 
 ### MySQL 데이터베이스 설치
