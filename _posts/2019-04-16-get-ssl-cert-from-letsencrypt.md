@@ -140,9 +140,6 @@ sudo a2ensite 여러분의SSL설정파일명(예를 들어, default-ssl.conf)
 운영체제에도 방화벽이 있습니다. 기본적으로 꺼져있으나 우리는 방화벽을 켠 다음 원하는 포트만 열겠습니다.    
 
 ```
-# 방화벽 활성화
-$ sudo ufw enable
-
 # 방화벽 상태보기
 $ sudo ufw status verbose
 
@@ -150,6 +147,9 @@ $ sudo ufw status verbose
 $ sudo ufw allow http
 $ sudo ufw allow https
 $ sudo ufw allow ssh
+
+# 방화벽 활성화
+$ sudo ufw enable
 ```
 
 ## [6/6] 아파치 재시작
