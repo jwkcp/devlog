@@ -55,12 +55,12 @@ Certbot을 설치하려면 패키지 매니저를 이용할 수도 있고, 그�
           
 ### 1순위 - 패키지 매니저에서 제공하는 Certbot 패키지 사용
 ```
-$ sudo apt-get update
-$ sudo apt-get install software-properties-common
+$ sudo apt update
+$ sudo apt install software-properties-common
 $ sudo add-apt-repository universe
 $ sudo add-apt-repository ppa:certbot/certbot
-$ sudo apt-get update
-$ sudo apt-get install certbot python-certbot-apache 
+$ sudo apt update
+$ sudo apt install certbot python-certbot-apache 
 ```
      
 ### 2순위 - certbot-auto를 다운로드하여 사용
