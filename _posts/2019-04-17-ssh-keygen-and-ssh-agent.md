@@ -49,6 +49,8 @@ $ ssh-add ~/.ssh/id_rsa
 ## Github에 공개키(id_rsa.pub) 등록하기
 id_rsa.pub(다른 이름일 수도 있습니다.)의 내용을 열어 그대로 복사합니다. 공백하나도 추가되면 안됩니다. 있는 그대로 복사하세요. 그리고 Github 오른쪽 상단의 계정 프로필 이미지를 누르고 ```Settings > SSH and GPG keys```를 누릅니다. 그리고 ```New SSH Key```나 ```Add SSH key```를 누릅니다. 이제 복사한 SSH 공개키를 붙여넣고 저장합니다.     
      
+---
+
 ## 연결 테스트
 ```ssh -T git@github.com```으로 연결 테스트를 해볼 수 있습니다.    
     

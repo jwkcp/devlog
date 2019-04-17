@@ -38,7 +38,7 @@ $ ssh -vT git@github.com
 ---
 
 [함께 보면 좋은 글]
-* [SSH Keygen을 이용한 키 생성 방법과 ssh-agent에 대한 간단 설명]{% link _posts/2019-04-17-ssh-keygen-and-ssh-agent.md %}
+* [SSH Keygen을 이용한 키 생성 방법과 ssh-agent에 대한 간단 설명](https://devlog.jwgo.kr/2019/04/17/ssh-keygen-and-ssh-agent/)
 
 [참고링크]
 * [Error: Permission denied (publickey)](https://help.github.com/en/articles/error-permission-denied-publickey)
