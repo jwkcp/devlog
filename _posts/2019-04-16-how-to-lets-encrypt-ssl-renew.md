@@ -78,7 +78,7 @@ $ 0 3 * * 6 /home/user/run.sh
 ## 인증서 갱신하기
 만약 매월 1일 03시에 인증서를 갱신하고 싶다면 아래와 같이 설정하면 됩니다.   
 ```
-$ 0 18 1 * * /usr/bin/certbot renew --renew-hook="sudo systemctl restart apache"
+$ 0 18 1 * * /usr/bin/certbot renew --renew-hook="sudo systemctl restart apache2"
 ```
      
 위에 새벽 3시인데 크론탭에는 18시라고 쓴 것은 서버 시간에 맞췄기 때문입니다. ```date``` 명령으로 자신의 서버 시간을 확인하고 시간을 설정하세요. [이 페이지](https://www.worldtimebuddy.com/kst-to-utc-converter)에서 시간을 쉽게 변환해볼 수 있습니다.      
