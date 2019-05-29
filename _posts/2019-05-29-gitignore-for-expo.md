@@ -1,6 +1,6 @@
 ---
 layout: post
-title: .expo 디렉토로도 git으로 관리해야 하나요?
+title: .expo 디렉토리도 git으로 관리해야 하나요?
 tags: react-native expo
 comments: true
 ---
