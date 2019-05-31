@@ -9,7 +9,11 @@ comments: true
 이 사이트만큼 플렉스박스를 보기 쉽고 이해하기 좋게 만들어둔 곳은 아직 보지 못했다. 수시로 찾아보고 확인하는 사이트. 기본 개념을 익히거나 다시 찾아볼 때 아주 유용하다.     
      
 [https://css-tricks.com/snippets/css/a-guide-to-flexbox/](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)    
-
+     
+## MDN의 flexbox의 기본 개념 페이지
+MDN(Mozilla Developer Network)에서 제공하는 기본 개념 페이지. 이 페이지는 바이블이라고 해도 손색이 없다.     
+     
+[https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Flexbox%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B0%9C%EB%85%90](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Flexbox%EC%9D%98_%EA%B8%B0%EB%B3%B8_%EA%B0%9C%EB%85%90)
 ---
 
 ## 이제는 실전이다.
