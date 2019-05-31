@@ -19,6 +19,6 @@ MDN(Mozilla Developer Network)에서 제공하는 기본 개념 페이지. 이 �
 ## 이제는 실전이다.
 아래 사이트는 위에서 익힌 플렉스박스를 좀비 카드를 배치해보면서 익힐 수 있는 사이트다. 머릿속으로는 다 알고 있는 것 같아도 막상 쓰려고 하면 잘 안되는 경험이 있다면 가볍게 도전해보자.  
     
-크롬 개발자 도구를 열고 .infected 엘리먼트를 찾아 css의 항목 값을 수정하면 된다.
+크롬이나 파이어폭스 개발자 도구를 열고 .infected 엘리먼트를 찾아 css의 항목 값을 수정하면 된다.
 [https://gedd.ski/flexbox/challenge/1/](https://gedd.ski/flexbox/challenge/1/)
       
