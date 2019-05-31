@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 나를 환장하게 만드는 우분투 Alt+Tab '데스크톱 보이기' 비활성화 하기
+title: 나를 환장하게 만드는 우분투 Alt+Tab '데스크톱 보이기' 비활성화하기
 tags: ubuntu
 comments: true
 ---
