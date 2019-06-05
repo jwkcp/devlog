@@ -38,7 +38,7 @@ comments: true
 ---
 
 ## supervisor
-**supervisor**는 init, upstart와 같이 부팅 시 프로세스를 실행하고 죽으면 다시 살려주는 프로세스 관리자다. 과거에는 이 프로세스 관리자로 supervisor를 많이 사용했는데 우분투가 init에서 upstart를 거쳐 데비안 계열의 공식 프로세스 관리자인 **systemd**를 채택하면서 supervisor대신 systemd를 사용하기로 했다. [10분만에 익히는 supervisor 설치와 사용법](https://jwkcp.github.io/2016/11/07/how-to-use-supervisor-in-one-minute/)을 통해 supervisor에 대해 간단히 살펴볼 수 있다. systemd를 사용하려면 /etc/systemd/system/ 경로 아래 내서비스명.service 파일이 있어야 한다. [여기](https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files)에서 DigitalOcean에서 풀어서 설명하는 systemd의 설정 파일에 대한 설명을 볼 수 있고, [여기](https://jwkcp.github.io/2018/06/04/systemd-simple-usage/)를 누르면 systemd에서 사용하는 명령어와 각 항목들에 대한 간략한 설명을 볼 수 있다. 아래는 systemd에 대한 위키백과의 설명이다.  
+**supervisor**는 init, upstart와 같이 부팅 시 프로세스를 실행하고 죽으면 다시 살려주는 프로세스 관리자다. 과거에는 이 프로세스 관리자로 supervisor를 많이 사용했는데 우분투가 init에서 upstart를 거쳐 데비안 계열의 공식 프로세스 관리자인 **systemd**를 채택하면서 supervisor대신 systemd를 사용하기로 했다. [10분만에 익히는 supervisor 설치와 사용법](https://devlog.jwgo.kr/2016/11/07/how-to-use-supervisor-in-one-minute/)을 통해 supervisor에 대해 간단히 살펴볼 수 있다. systemd를 사용하려면 /etc/systemd/system/ 경로 아래 내서비스명.service 파일이 있어야 한다. [여기](https://www.digitalocean.com/community/tutorials/understanding-systemd-units-and-unit-files)에서 DigitalOcean에서 풀어서 설명하는 systemd의 설정 파일에 대한 설명을 볼 수 있고, [여기](https://devlog.jwgo.kr/2018/06/04/systemd-simple-usage/)를 누르면 systemd에서 사용하는 명령어와 각 항목들에 대한 간략한 설명을 볼 수 있다. 아래는 systemd에 대한 위키백과의 설명이다.  
   
 > systemd는 일부 리눅스 배포판에서 유닉스 시스템 V나 BSD init 시스템 대신 사용자 공간을 부트스트래핑하고 최종적으로 모든 프로세스들을 관리하는 init 시스템이다. systemd라는 이름 뒤에 추가된 d는 유닉스에서의 데몬을 나타낸다.
   
@@ -50,7 +50,7 @@ systemd를 사용해 gunicorn을 구동하고 gunicorn 스크립트를 통해 vi
 ---
   
 ## pip
-**pip**는 파이썬 패키지 관리자다. python3가 나오면서 pip도 pip3가 나왔다. 그래서 python3를 설치했다면 pip3를 써야하는데 *python3 -m venv myvemv* 와 같이 python3로 가상환경을 만들면 pip3가 아닌 pip로 쓰면 된다. 이 과정에서 [이런](https://jwkcp.github.io/2018/05/26/pip3-error-on-ubuntu/) 문제를 겪기도 했다. 초기에 관련 의존성 패키지를 설치를 할 때는 아래와 같은 것들을 설치했다.  
+**pip**는 파이썬 패키지 관리자다. python3가 나오면서 pip도 pip3가 나왔다. 그래서 python3를 설치했다면 pip3를 써야하는데 *python3 -m venv myvemv* 와 같이 python3로 가상환경을 만들면 pip3가 아닌 pip로 쓰면 된다. 이 과정에서 [이런](https://devlog.jwgo.kr/2018/05/26/pip3-error-on-ubuntu/) 문제를 겪기도 했다. 초기에 관련 의존성 패키지를 설치를 할 때는 아래와 같은 것들을 설치했다.  
   
 ~~~
 sudo apt-get -y install build-essential libpq-dev python3-dev postgresql postgresql-contrib, nginx
@@ -60,22 +60,22 @@ sudo apt-get -y install build-essential libpq-dev python3-dev postgresql postgre
 웹서버. apache와 함께 가장 많이 쓰이는 웹서버다. gunicorn 서비스를 127.0.0.1:8000과 같이 바인딩하면 nginx가 sites-enabled의 설정 파일을 통해 관련 외부 요청을 연결시켜준다. 외부 사용자 요청을 nginx가 받아서 systemd로 띄운 gunicorn을 django를 통해 처리 후 되돌려 주는 것이다.   
  
 ## postgresql
-mysql가 함께 많이 사용되는 데이터베이스. 레퍼런스와 트러블 슈팅 자료 등은 확실히 mysql이 많고, 특별한 이유가 아니면 굳이 mysql을 거부할 이유도 없지만 오라클에 인수 후 뭔가 지속가능성에 의구심이 들어 postgresql을 사용해봐야겠다는 생각을 해서 시도했다. 쿼리문 등 기본적으로 사용하는 것은 비슷하지만 다른 부분은 또 전혀 달라서 관련 명령어를 찾아봐야했다. 예를 들어 데이터베이스 목록을 보는 명령이 mysql은 *show databases;* 이지만 postgresql은 *\l;*이다. 처음 사용하면서 간단히 관련 명령을 [여기](https://jwkcp.github.io/2018/05/25/getting-start-postgres/)에 정리해두었다. mysql은 [여기](https://jwkcp.github.io/2018/05/23/prepare-to-use-mysql/)를 참고하면 된다.    
+mysql가 함께 많이 사용되는 데이터베이스. 레퍼런스와 트러블 슈팅 자료 등은 확실히 mysql이 많고, 특별한 이유가 아니면 굳이 mysql을 거부할 이유도 없지만 오라클에 인수 후 뭔가 지속가능성에 의구심이 들어 postgresql을 사용해봐야겠다는 생각을 해서 시도했다. 쿼리문 등 기본적으로 사용하는 것은 비슷하지만 다른 부분은 또 전혀 달라서 관련 명령어를 찾아봐야했다. 예를 들어 데이터베이스 목록을 보는 명령이 mysql은 *show databases;* 이지만 postgresql은 *\l;*이다. 처음 사용하면서 간단히 관련 명령을 [여기](https://devlog.jwgo.kr/2018/05/25/getting-start-postgres/)에 정리해두었다. mysql은 [여기](https://devlog.jwgo.kr/2018/05/23/prepare-to-use-mysql/)를 참고하면 된다.    
   
 ## 로케일(locate)
-별것 아닌 것 같지만 꼭 필요하고 처음 접하면 은근 시간을 잡아먹는다. ubuntu에서 설정해야 하는 locale과 postgresql에서 설정해야 하는 locale이 있다. ubuntu에서 locale 설정은 [여기](https://jwkcp.github.io/2018/06/01/how-to-set-locale-on-ubuntu/)에 정리해두었다. postgresql의 locale은 /etc/postgresql/9.5/main/postgresql.conf 파일을 열어보면 중간 쯤에 lc_로 시작하는 부분이 있다.  
+별것 아닌 것 같지만 꼭 필요하고 처음 접하면 은근 시간을 잡아먹는다. ubuntu에서 설정해야 하는 locale과 postgresql에서 설정해야 하는 locale이 있다. ubuntu에서 locale 설정은 [여기](https://devlog.jwgo.kr/2018/06/01/how-to-set-locale-on-ubuntu/)에 정리해두었다. postgresql의 locale은 /etc/postgresql/9.5/main/postgresql.conf 파일을 열어보면 중간 쯤에 lc_로 시작하는 부분이 있다.  
   
 ---
 
 # 장고 공식 문서의 배포 가이드 번역
 관련 내용을 살펴보고 처음 적용해보면서 어차피 보는 거 번역해두면 좋겠다 싶었다.  
   
-- [Django(장고) 배포 가이드(번역) - 1. 시작하기](https://jwkcp.github.io/2018/05/20/deployment-start/)
-- [Django(장고) 배포 가이드(번역) - 2. WSGI를 이용해 배포하기](https://jwkcp.github.io/2018/05/20/deployment-wsgi/)
-- [Django(장고) 배포 가이드(번역) - 3. 배포 체크리스트](https://jwkcp.github.io/2018/05/11/deployment-checklist-for-django/)
-- [Django(장고) 배포 가이드(번역) - 4. 아파치 서버와 mod_wsgi 사용법](https://jwkcp.github.io/2018/05/21/deployment-mod-wsgi/)
-- [Django(장고) 배포 가이드(번역) - 6. Gunicorn 사용법](https://jwkcp.github.io/2018/05/23/deployment-gunicorn/)
-- [Django(장고) 배포 가이드(번역) - 7. uWSGI 사용법](https://jwkcp.github.io/2018/05/23/deployment-uwsgi/)
+- [Django(장고) 배포 가이드(번역) - 1. 시작하기](https://devlog.jwgo.kr/2018/05/20/deployment-start/)
+- [Django(장고) 배포 가이드(번역) - 2. WSGI를 이용해 배포하기](https://devlog.jwgo.kr/2018/05/20/deployment-wsgi/)
+- [Django(장고) 배포 가이드(번역) - 3. 배포 체크리스트](https://devlog.jwgo.kr/2018/05/11/deployment-checklist-for-django/)
+- [Django(장고) 배포 가이드(번역) - 4. 아파치 서버와 mod_wsgi 사용법](https://devlog.jwgo.kr/2018/05/21/deployment-mod-wsgi/)
+- [Django(장고) 배포 가이드(번역) - 6. Gunicorn 사용법](https://devlog.jwgo.kr/2018/05/23/deployment-gunicorn/)
+- [Django(장고) 배포 가이드(번역) - 7. uWSGI 사용법](https://devlog.jwgo.kr/2018/05/23/deployment-uwsgi/)
 
 ---
   
