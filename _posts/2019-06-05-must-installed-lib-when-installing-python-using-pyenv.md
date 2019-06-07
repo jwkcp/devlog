@@ -45,19 +45,19 @@ ModuleNotFoundError: No module named '_ctypes'
     
 ```
 # 해결방법: sudo apt install libbz2-dev    
-# (설치하는 김에 zlib1g-dev도 함께 설치하자. 둘 다 압축 관련 라이브러리다.)    
+# 설치하는 김에 zlib1g-dev도 함께 설치하자. 둘 다 압축 관련 라이브러리다.    
 WARNING: The Python bz2 extension was not compiled. Missing the bzip2 lib?
 ```
 
 ```
 # 해결방법: sudo apt install libreadline-dev       
+# CLI에서 편집 및 입력 관련 라이브러리다.    
 WARNING: The Python readline extension was not compiled. Missing the GNU readline lib?
 ```
-(CLI에서 편집 및 입력 관련 라이브러리다.)    
 
 ```
 # 해결방법: sudo apt install libsqlite3-dev      
-# (SQLite 관련 라이브러리다.)     
+# SQLite 관련 라이브러리다.     
 WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
 ```    
     
