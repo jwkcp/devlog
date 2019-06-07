@@ -44,20 +44,20 @@ ModuleNotFoundError: No module named '_ctypes'
 아래는 에러가 아닌 경고다. 파이썬 설치는 되지만 문제가 있다는 말로 무시하고 그냥 지나가면 ```python manage.py makemigrations```를 할 때 에러를 만나게 된다. 어차피 나중에 이 경고를 해결하고 파이썬을 재설치 해야 하기 때문에 무시하지 말고 해결하고 가자.    
     
 ```
+# 해결방법: sudo apt install libbz2-dev    
+# (설치하는 김에 zlib1g-dev도 함께 설치하자. 둘 다 압축 관련 라이브러리다.)    
 WARNING: The Python bz2 extension was not compiled. Missing the bzip2 lib?
 ```
-해결방법: sudo apt install libbz2-dev    
-(설치하는 김에 zlib1g-dev도 함께 설치하자. 둘 다 압축 관련 라이브러리다.)    
 
 ```
+# 해결방법: sudo apt install libreadline-dev       
 WARNING: The Python readline extension was not compiled. Missing the GNU readline lib?
 ```
-해결방법: sudo apt install libreadline-dev       
 (CLI에서 편집 및 입력 관련 라이브러리다.)    
 
 ```
+# 해결방법: sudo apt install libsqlite3-dev      
+# (SQLite 관련 라이브러리다.)     
 WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
 ```    
-해결방법: sudo apt install libsqlite3-dev      
-(SQLite 관련 라이브러리다.)     
     
