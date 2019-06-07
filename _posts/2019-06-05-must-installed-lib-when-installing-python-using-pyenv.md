@@ -60,4 +60,13 @@ WARNING: The Python readline extension was not compiled. Missing the GNU readlin
 # SQLite 관련 라이브러리다.     
 WARNING: The Python sqlite3 extension was not compiled. Missing the SQLite3 lib?
 ```    
-    
+
+---
+
+## 한 번에 설치하기
+```
+sudo apt install build-essential libffi-dev libbz2-dev zlib1g-dev libreadline-dev libsqlite3-dev
+```    
+     
+이렇게 설치가 끝나면 기 설치된 파이썬을 제거하고 다시 설치해주면 된다.
+     
