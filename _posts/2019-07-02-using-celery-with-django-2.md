@@ -84,7 +84,7 @@ def debug_task(self):
 
 그 다음 ```proj/proj/__init__.py```에서 이 ```app```을 임포트합니다. 이렇게 하면 장고가 시작될 때 @shared_task 데코레이터가 사용할 앱을 자동으로 로드시켜 줍니다.  
 
-proj/proj/__init__.py:   
+**file:** ```proj/proj/__init__.py```       
 
 {% highlight python %}
 from __future__ import absolute_import, unicode_literals
