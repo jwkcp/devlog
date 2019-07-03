@@ -28,6 +28,13 @@ comments: true
 ---
 
 이 문서는 현재 안정화된 버전인 Celery 4.3을 기준으로 설명합니다. 최신(그러나 작업 중인) 버전은 [여기](http://docs.celeryproject.org/en/master/django/first-steps-with-django.html)를 참고하세요.   
+
+---
+
+**이 글의 시리즈 글:**  
+- [장고(Django)에서 셀러리(Celery) 사용하기 1편](https://devlog.jwgo.kr/2019/07/02/using-celery-with-django-1)   
+- [장고(Django)에서 셀러리(Celery) 사용하기 2편](https://devlog.jwgo.kr/2019/07/02/using-celery-with-django-2)   
+- [장고(Django)에서 셀러리(Celery) 사용하기 3편](https://devlog.jwgo.kr/2019/07/02/using-celery-with-django-3)   
     
 # 1편
 
