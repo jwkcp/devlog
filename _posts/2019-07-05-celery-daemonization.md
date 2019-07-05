@@ -50,7 +50,7 @@ comments: true
 
 ## 설치 과정
 
-### 사전 작업 (1/4)
+## 사전 작업 (1/4)
 
 #### 1. C_FORCE_ROOT 환경 변수 설정
 셀러리는 기본적으로 root 유저로 실행되지 않는다는 것을 전제로 합니다. 셀러리는 메시지로 직렬화(serialize)된 피클(pickle, 파이썬에서 사전형과 같은 자료구조를 저장하기 위한 한 방법)를 수신할 수 있는데 여기에 악의적인 코드가 포함되어 root로 실행되면 매우 위험한 일이 생길 수 있기 때문입니다. (셀러리를 데몬으로 구동 시 본인의 코드가 피클을 매개변수로 받는 등의 작업이 있다면 이 부분에 각별히 신경을 써야 합니다.)     
@@ -75,7 +75,7 @@ d /var/log/celery 0755 celery celery -
 
 ---
 
-### 설정 (2/4)
+## 설정 (2/4)
 설정을 ```/etc/conf.d/celery```에 만들어줍니다. 공식 문서에는 주석으로 좀 더 많은 부연 설명이 있는데 여기서는 좀 간소화했습니다. 여러 설정들이 있지만 ```CELERY_BIN```와 ```CELERY_APP```을 제외하면 딱히 수정할 부분이 없을겁니다.   
 
 ```CELERY_BIN``` 에는 설치된 셀러리의 절대 경로를 써줍니다. 가상환경에 설치한 분은 가상환경 경로를 포함해 기재해야 합니다.   
@@ -103,7 +103,7 @@ CELERYBEAT_LOG_FILE="/var/log/celery/beat.log"
 
 ---
 
-### celery.service (3/4)
+## celery.service (3/4)
 ```/etc/systemd/system/celery.service``` 경로에 아래 내용으로 파일을 만들어 줍니다. 이 파일 역시 손댈 부분이 많지 않습니다. 아래 나열한 항목만 바꿔줘도 충분합니다.  
 
 - **User**: 서비스를 실행할 사용자입니다. 저의 경우 celery라는 사용자를 ```sudo adduser celery```로 만들어 주었습니다만 자신의 상황에 맞게 입력해주시면 됩니다.  
@@ -139,7 +139,7 @@ WantedBy=multi-user.target
 
 ---
 
-### celerybeat.service (4/4)
+## celerybeat.service (4/4)
 ```celery.service```와 대부분의 과정이 같습니다. ```/etc/systemd/system/celerybeat.service``` 경로에 파일을 만들고 아래 내용을 입력합니다. 수정해야 하는 부분도 ```celery.service```와 같습니다. 나머지는 그대로 두면 됩니다.     
 
 ```
@@ -163,7 +163,7 @@ WantedBy=multi-user.target
 
 ---
 
-### 끝
+## 끝
 이제 ```sudo systemctl start celery.service```로 서비스를 구동하고 ```sudo systemctl status celery.service```로 잘 돌고 있는지 상태를 점검하세요. 참, 실행 스크립트를 생성하거나 수정한 다음에는 ```sudo systemctl daemon-reload```를 통해 파일이 변경되었음을 알려줘야 한다는 점도 잊지 마세요.     
 
 자, 다시 정리해보겠습니다.   
