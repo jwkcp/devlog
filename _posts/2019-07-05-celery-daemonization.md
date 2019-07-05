@@ -109,6 +109,7 @@ CELERYBEAT_LOG_FILE="/var/log/celery/beat.log"
 - **User**: 서비스를 실행할 사용자입니다. 저의 경우 celery라는 사용자를 ```sudo adduser celery```로 만들어 주었습니다만 자신의 상황에 맞게 입력해주시면 됩니다.  
 - **Group**: 위에 User와 같이 자신에 맞게 설정합니다. 저의 경우 celery라는 그룹도 ```sudo adduser celery```로 함께 만들면서 이걸 써줬습니다.  
 - **WorkingDirectory**: 자신의 최상위 프로젝트 폴더명을 써주면 됩니다.  
+- **Exec{Start|Stop|Reload}**: 명령 시작 부분에 ```/bin/sh```로 되어 있는데 자기가 쓰고 있는 쉘로 바꿔주세요.   
 
 나머지는 앞서 설정한 ```/etc/conf.d/celery```의 값을 읽어와 알아서 설정됩니다.   
 
