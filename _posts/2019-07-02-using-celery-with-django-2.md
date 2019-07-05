@@ -214,7 +214,7 @@ Admin 인터페이스와 함께 데이터베이스 지원 가능한 주기 작�
 ---
 
 # 워커(worker) 프로세스 시작하기
-실제 운영 환경에서는 셀러리 워커(worker)가 데몬과 같이 백그라운드로 동작하게 하고 싶으실 겁니다. 여기 [데몬으로 동작시키기](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html)를 참고하세요. 하지만 단순 테스트나 개발 시에는 셀러리 워커 관리 커맨드를 사용해 워커(worker) 인스턴스를 시작시키는 것도 유용한 방법입니다.  
+실제 운영 환경에서는 셀러리 워커(worker)가 데몬과 같이 백그라운드로 동작하게 하고 싶으실 겁니다. 여기 [데몬으로 동작시키기](https://devlog.jwgo.kr/2019/07/05/celery-daemonization/)를 참고하세요. 하지만 단순 테스트나 개발 시에는 셀러리 워커 관리 커맨드를 사용해 워커(worker) 인스턴스를 시작시키는 것도 유용한 방법입니다.  
 
 {% highlight python %}
 celery -A proj worker -l info

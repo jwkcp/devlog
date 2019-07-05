@@ -148,7 +148,7 @@ celery worker -help
 ```worker```를 중지하기 위해선 간단히 ```Ctrl + c```를 누르면 됩니다. 지원하는 신호(signal)에 대한 목록은 [워커 가이드](http://docs.celeryproject.org/en/latest/userguide/workers.html#guide-workers)에 있습니다.   
 
 #### 백그라운드로 작업하기
-실 운영 환경에서는 ```worker```를 백그라운드로 동작시킥고 싶을 것입니다. 이에 관한 내용은 [데몬으로 만들기](http://docs.celeryproject.org/en/latest/userguide/daemonizing.html#daemonizing) 튜토리얼을 참고하세요.  
+실 운영 환경에서는 ```worker```를 백그라운드로 동작시킥고 싶을 것입니다. 이에 관한 내용은 [데몬으로 만들기](https://devlog.jwgo.kr/2019/07/05/celery-daemonization/) 튜토리얼을 참고하세요.  
 
 하나 이상의 ```worker```를 백그라운드로 동작시키기 위해서는 ```celery multi``` 명령을 사용합니다.  
 ```

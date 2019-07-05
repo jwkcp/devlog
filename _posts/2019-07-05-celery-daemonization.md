@@ -13,6 +13,7 @@ comments: true
 - [장고(Django)에서 셀러리(Celery) 사용하기 1편](https://devlog.jwgo.kr/2019/07/02/using-celery-with-django-1)   
 - [장고(Django)에서 셀러리(Celery) 사용하기 2편](https://devlog.jwgo.kr/2019/07/02/using-celery-with-django-2)   
 - [장고(Django)에서 셀러리(Celery) 사용하기 3편](https://devlog.jwgo.kr/2019/07/02/using-celery-with-django-3)   
+- [장고(Django)에서 셀러리(Celery)로 크론탭처럼 주기적으로 작업 시키키 초간단 정리](https://devlog.jwgo.kr/2019/07/03/do-periodic-task-using-celery-with-django/)
     
 ---
 
