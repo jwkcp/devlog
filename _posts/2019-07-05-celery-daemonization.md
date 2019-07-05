@@ -163,7 +163,7 @@ WantedBy=multi-user.target
 ---
 
 ### 끝
-이제 ```sudo systemctl start celery.service```로 서비스를 구동하고 ```sudo systemctl status celery.service```로 잘 돌고 있는지 상태를 점검하세요.  
+이제 ```sudo systemctl start celery.service```로 서비스를 구동하고 ```sudo systemctl status celery.service```로 잘 돌고 있는지 상태를 점검하세요. 참, 실행 스크립트를 생성하거나 수정한 다음에는 ```sudo systemctl daemon-reload```를 통해 파일이 변경되었음을 알려줘야 한다는 점도 잊지 마세요.     
 
 자, 다시 정리해보겠습니다.   
 
