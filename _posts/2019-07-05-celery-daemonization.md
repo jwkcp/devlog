@@ -71,6 +71,9 @@ d /var/run/celery 0755 celery celery -
 d /var/log/celery 0755 celery celery -
 ```
 
+> **주의!**
+위에 celery celery 이렇게 써 있는 부분은 순서대로 사용자, 그룹을 뜻합니다. celery사용자와 celery그룹을 써도 되지만 그럴 경우 소스가 celery사용자가 접근할 수 있는 권한이 있어야 합니다. 그렇지 않으면 Permmision Denied 같은 에러가 가 발생하거나 무슨 에러인지 모르겠지만 ```celery``` 혹은 ```celerybeat```가 Failed로 표시되며 실행되지 않는 어려움을 겪게 됩니다. 무슨 말인지 햇갈리거나 어렵다면 그냥 현재 로그인한 사용자와 그룹으로 설정해보세요. 그렇게 경험해보면 어떤 뜻인지 저절로 이해하게 됩니다.    
+
 그리고 이 설정을 적용하기 위해 ```systemd-tmpfiles --create``` 명령을 실행합니다. 이 명령 실행에 대한 부분이 셀러리 공식 문서에는 써 있지 않아 한참 애를 먹었네요. 리눅스에 좀 더 익숙하신 분들이라면 바로 보고 아셨겠지만요. : )   
 
 ---
@@ -160,6 +163,9 @@ ExecStart=/bin/sh -c '${CELERY_BIN} beat  \
 [Install]
 WantedBy=multi-user.target
 ```
+
+> **주의!**
+위에 celery celery 이렇게 써 있는 부분은 순서대로 사용자, 그룹을 뜻합니다. celery사용자와 celery그룹을 써도 되지만 그럴 경우 소스가 celery사용자가 접근할 수 있는 권한이 있어야 합니다. 그렇지 않으면 Permmision Denied 같은 에러가 가 발생하거나 무슨 에러인지 모르겠지만 ```celery``` 혹은 ```celerybeat```가 Failed로 표시되며 실행되지 않는 어려움을 겪게 됩니다. 무슨 말인지 햇갈리거나 어렵다면 그냥 현재 로그인한 사용자와 그룹으로 설정해보세요. 그렇게 경험해보면 어떤 뜻인지 저절로 이해하게 됩니다.   
 
 ---
 
