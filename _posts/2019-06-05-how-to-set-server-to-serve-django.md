@@ -58,7 +58,7 @@ pyenv를 사용하지 않고 서버에 설치된 혹은 설치가 안되어 있�
 ```
 export PYENV_ROOT=”$HOME/.pyenv”
 export PATH=”$PYENV_ROOT/bin:$HOME”
-eval “$(pyenv init -)
+eval “$(pyenv init -)"
 ```   
 저장하고 닫은 후 ```source .bashrc```로 쉘 재실행    
            
