@@ -43,7 +43,7 @@ comments: true
 
 ```systemd```는 ```systemctl {start|stop|restart|status} celery.service```의 명령을 쓰는 서비스, 네 여러분이 알고 계시는 그것 맞습니다. 실행에 필요한 스크립트와 설정 경로는 아래와 같습니다.   
 
-- 스크립트: ```/etc/systemd/systed/celery.service```, ```/etc/systemd/systed/celerybeat.service```
+- 스크립트: ```/etc/systemd/system/celery.service```, ```/etc/systemd/system/celerybeat.service```
 - 설정: ```/etc/conf.d/celery```
 
 ---
