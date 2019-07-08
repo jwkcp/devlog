@@ -114,7 +114,7 @@ def printing():
 ```
 
 # 셀러리 데몬(백그라운드)으로 돌리기
-[데몬으로 셀러리(Celery) 돌리기]({% post_url 2019-07-05-celery-daemonization %})
+[데몬으로 셀러리(Celery) 돌리기]({% post_url 2019-07-05-celery-daemonization %}) 글을 참고하세요. 
 
 ---
 
