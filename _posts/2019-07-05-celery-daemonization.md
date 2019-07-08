@@ -104,6 +104,9 @@ CELERYBEAT_PID_FILE="/var/run/celery/beat.pid"
 CELERYBEAT_LOG_FILE="/var/log/celery/beat.log"
 ```
 
+> 주의하세요!
+위에 5번째 줄을 보면 `concurrency=8`이라고 되어 있는 부분이 있습니다. 동시성 옵션인데 동시에 몇 개의 워커를 생성해서 큐의 밀린 작업을 처리하게 할지 정하는 옵션입니다. 소량의 작업을 주기적으로 실행한다면 1로 해도 괜찮습니다. 아마존 라이트셰일(lightsail) 월 $3.5 짜리 서버는 concurrency 옵션에 8을 주면 터미널 명령이 먹지 않을 정도로 느려지는 형상을 경험할 수 있습니다.   
+
 ---
 
 ## celery.service (3/4)

@@ -157,7 +157,11 @@ WantedBy=multi-user.target
 ---
 
 ## 8. Systemd 설정
-이 상태에서 systemd를 이용해 gunicorn을 실행하겠습니다. systemd는 ```/etc/systemd/system```에 있는 파일을 실행합니다. 따라서 ```sudo systemctl start gunicorn.service```를 하기 위해 위헤서 만든 ```gunicorn.service```의 심볼링 링크를 만들어 줍니다.    
+이 상태에서 systemd를 이용해 gunicorn을 실행하겠습니다.   
+
+`/etc/systemd/system`에 직접 만들어줘도 되고, 원하는 위치에 만든 후 `/etc/systemd/system`에 심볼릭 링크를 만들어줘도 됩니다. 아래는 심볼릭 링크로 만드는 방법입니다.  
+
+systemd는 ```/etc/systemd/system```에 있는 파일을 실행합니다. 따라서 ```sudo systemctl start gunicorn.service```를 하기 위해 위헤서 만든 ```gunicorn.service```의 심볼링 링크를 만들어 줍니다.    
    
 ```
 sudo ln -s /home/ubuntu/apps/mydjango/run/gunicorn.service /etc/systemd/system/
