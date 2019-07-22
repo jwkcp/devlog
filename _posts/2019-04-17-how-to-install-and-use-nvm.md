@@ -22,6 +22,8 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | b
 # wget을 이용할 경우
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
 ```
+
+쉘을 재시작해주고,  
       
 잘 설치되었나 ```command -v nvm```을 터미널에 입력하여 체크! nvm이란 글자만 나오면 설치가 성공적으로 되었다는 말입니다.
 
