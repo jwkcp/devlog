@@ -22,22 +22,22 @@ comments: true
 
 `pyenv`로 원하는 파이썬 버전을 설치해는게 앞으로도 편하고 좋다. 설치는 [우분투(Ubuntu)에 pyenv 설치하기](https://devlog.jwgo.kr/2019/07/07/installing-pyenv-in-ubuntu/), 설치 도중 문제가 있는 경우 [pyenv로 파이썬 설치 시 발생하는 오류와 해결 방법 (이거 하나면 끝!)](https://devlog.jwgo.kr/2019/06/05/must-installed-lib-when-installing-python-using-pyenv/)를 참조하면 된다. pyenv 공식 문서는 [여기](https://github.com/pyenv/pyenv). 아래는 간단한 요약이다.
 
-```
-$ sudo apt install build-essential libffi-dev libbz2-dev zlib1g-dev libreadline-dev libsqlite3-dev
+```bash
+$sudo apt install build-essential libffi-dev libbz2-dev zlib1g-dev libreadline-dev libsqlite3-dev
 
-$ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+$git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
-$ echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
-$ echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
-$ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
+$echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+$echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
+$echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bashrc
 
-$ exec "$SHELL"
+$exec "$SHELL"
 
-$ pyenv install 3.6.8
+$pyenv install 3.6.8
 
-$ pyenv shell 3.6.8
+$pyenv shell 3.6.8
 
-$ echo 'export PYENV_VERSION=3.6.8` >> ~/.bashrc
+$echo 'export PYENV_VERSION=3.6.8` >> ~/.bashrc
 ```
 
 ---
