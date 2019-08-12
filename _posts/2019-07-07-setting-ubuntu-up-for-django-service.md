@@ -45,40 +45,42 @@ $ echo 'export PYENV_VERSION=3.6.8` >> ~/.bashrc
 ## rabbitmq 설치하기 (선택사항)
 
 1. 설치
-`sudo apt install rabbitmq-server`
+   `sudo apt install rabbitmq-server`
 
 2. 서비스 확인
-`sudo systemctl status rabbitmq-server`
+   `sudo systemctl status rabbitmq-server`
 
 3. 큐(queue)에 얼마나 작업(task)가 쌓였는지 보기
-`sudo rabbitmqctl list_queues`
+   `sudo rabbitmqctl list_queues`
 
 4. 큐(queue)에 쌓인 작업 날리기
-`sudo rabbitmqctl purge_queue celery` (뒤의 celery 부분에 큐 이름을 넣습니다.) 
+   `sudo rabbitmqctl purge_queue celery` (뒤의 celery 부분에 큐 이름을 넣습니다.)
+
 ---
 
 ## redis 설치하기 (선택사항)
 
 1. 설치
-`sudo apt install redis-server`
+   `sudo apt install redis-server`
 
 2. 서비스 확인
-`sudo systemctl status redis-server`  
-`redis-cli ping`하면 `PONG`나오면 성공
+   `sudo systemctl status redis-server`  
+   `redis-cli ping`하면 `PONG`나오면 성공
 
 3. 데이터 조회
-`redis-cli get 키이름` 하면 키에 해당하는 값이 조회됨.  
+   `redis-cli get 키이름` 하면 키에 해당하는 값이 조회됨.
 
 ---
 
 ## git에서 소스 복사
 
 `ssh-keygen -t rsa`로 서버에서 키를 발급받고 깃허브 저장소 설정 > 배포키에 추가해주면 된다. 자세한 내용은 [git 프라이빗 저장소 원격지 서버에 클론하는 방법
-](https://devlog.jwgo.kr/2019/07/07/how-to-clone-private-repo-into-remote-server/) 참고.    
+](https://devlog.jwgo.kr/2019/07/07/how-to-clone-private-repo-into-remote-server/) 참고.
 
 > 잠깐!
-1. 배포 전 장고의 `DEBUG = True` 를 `DEBUG = False`로 바꿔주셨는지 확인하세요.  
-2. 장고의 ALLOWED_HOSTS에 올바른 값을 넣었는지 확인하세요. `ALLOWED_HOSTS = ['*']`는 모든 클라이언트를 접근을 허용합니다. 웹서버를 사용한다면 웹서버에서만 접근하도록 `ALLOWED_HOSTS = ['웹서버도메인주소']` 와 같이 해주고 웹서버 설정에서 `proxy_set_header Host $http_host`처럼 설정해주면 웹서버가 접근한 URL을 gunicorn이 서비스하는 WSGI서버에 그대로 전달하게 됩니다.   
+
+1. 배포 전 장고의 `DEBUG = True` 를 `DEBUG = False`로 바꿔주셨는지 확인하세요.
+2. 장고의 ALLOWED_HOSTS에 올바른 값을 넣었는지 확인하세요. `ALLOWED_HOSTS = ['*']`는 모든 클라이언트를 접근을 허용합니다. 웹서버를 사용한다면 웹서버에서만 접근하도록 `ALLOWED_HOSTS = ['웹서버도메인주소']` 와 같이 해주고 웹서버 설정에서 `proxy_set_header Host $http_host`처럼 설정해주면 웹서버가 접근한 URL을 gunicorn이 서비스하는 WSGI서버에 그대로 전달하게 됩니다.
 
 ---
 
@@ -96,9 +98,9 @@ $ echo 'export PYENV_VERSION=3.6.8` >> ~/.bashrc
 
 ## 셀러리 설치
 
-`pip install celery`   
+`pip install celery`
 
-더 자세한 셀러리 설치 방법은 [장고(Django)에서 셀러리(Celery) 사용하기]({% post_url 2019-07-02-using-celery-with-django-1 %})와 [장고(Django)에서 셀러리(Celery)로 크론탭처럼 주기적으로 작업 시키키 초간단 정리]({% post_url 2019-07-03-do-periodic-task-using-celery-with-django %})를 참고하세요.   
+더 자세한 셀러리 설치 방법은 [장고(Django)에서 셀러리(Celery) 사용하기]({% post_url 2019-07-02-using-celery-with-django-1 %})와 [장고(Django)에서 셀러리(Celery)로 크론탭처럼 주기적으로 작업 시키키 초간단 정리]({% post_url 2019-07-03-do-periodic-task-using-celery-with-django %})를 참고하세요.
 
 --
 
@@ -110,13 +112,14 @@ $ echo 'export PYENV_VERSION=3.6.8` >> ~/.bashrc
 4. 참, 주기적으로 실행할 작업이 있다면 /etc/systemd/system/celerybeat.service도 만들고 실행해주면 됩니다. (선택사항)
 
 > 주의하세요!
-위에 5번째 줄을 보면 `concurrency=8`이라고 되어 있는 부분이 있습니다. 동시성 옵션인데 동시에 몇 개의 워커를 생성해서 큐의 밀린 작업을 처리하게 할지 정하는 옵션입니다. 소량의 작업을 주기적으로 실행한다면 1로 해도 괜찮습니다. 아마존 라이트셰일(lightsail) 월 $3.5 짜리 서버는 concurrency 옵션에 8을 주면 터미널 명령이 먹지 않을 정도로 느려지는 형상을 경험할 수 있습니다.   
-    
-자세한 내용은 [데몬으로 셀러리(Celery) 돌리기]({% post_url 2019-07-05-celery-daemonization %}) 글을 참고하세요.  
+> 위에 5번째 줄을 보면 `concurrency=8`이라고 되어 있는 부분이 있습니다. 동시성 옵션인데 동시에 몇 개의 워커를 생성해서 큐의 밀린 작업을 처리하게 할지 정하는 옵션입니다. 소량의 작업을 주기적으로 실행한다면 1로 해도 괜찮습니다. 아마존 라이트셰일(lightsail) 월 \$3.5 짜리 서버는 concurrency 옵션에 8을 주면 터미널 명령이 먹지 않을 정도로 느려지는 형상을 경험할 수 있습니다.
+
+자세한 내용은 [데몬으로 셀러리(Celery) 돌리기]({% post_url 2019-07-05-celery-daemonization %}) 글을 참고하세요.
 
 ---
 
 ## 웹서버, WSGI서버 설정하기
+
 지금까지 장고(Django) 프로젝트를 서비스하기 위해 몇 가지 작업을 했습니다.
 
 1. 시스템 업그레이드
@@ -130,26 +133,27 @@ $ echo 'export PYENV_VERSION=3.6.8` >> ~/.bashrc
 
 --
 
-이 작업들은 내부적으로 프로그램이 실행되는 과정에 대한 것이었습니다. 이제 이렇게 작업한 결과물을 WSGI서버와 웹서버를 통해 외부에 공개할 차례입니다. 아시다시피 웹서버는 Nginx나 Apache와 같이 정적 데이터를 서비스하고 사용자의 초기 요청을 라우팅해주는 역할을 합니다. WSGI는 **W**eb **S**erver **G**ateway **I**nterface의 약자로 Gunicorn이나 uWSGI와 같은 프로그램이 있습니다. WSGI는 웹 애플리케이션 서버가 앞서 이야기한 웹서버와 어떻게 할지 정해놓은 명세로 우리가 파이썬을 이용해 장고 프로젝트에 짠 소스가 실행되며 동적 컨텐츠를 서비스 할 수 있게 해줍니다.   
+이 작업들은 내부적으로 프로그램이 실행되는 과정에 대한 것이었습니다. 이제 이렇게 작업한 결과물을 WSGI서버와 웹서버를 통해 외부에 공개할 차례입니다. 아시다시피 웹서버는 Nginx나 Apache와 같이 정적 데이터를 서비스하고 사용자의 초기 요청을 라우팅해주는 역할을 합니다. WSGI는 **W**eb **S**erver **G**ateway **I**nterface의 약자로 Gunicorn이나 uWSGI와 같은 프로그램이 있습니다. WSGI는 웹 애플리케이션 서버가 앞서 이야기한 웹서버와 어떻게 할지 정해놓은 명세로 우리가 파이썬을 이용해 장고 프로젝트에 짠 소스가 실행되며 동적 컨텐츠를 서비스 할 수 있게 해줍니다.
 
-여기서는 웹서버로 Nginx, WSGI서버로 Gunicorn을 사용합니다. 아래 또는 [AWS Lightsail에 nginx, gunicorn, systemd를 이용해 장고(Django) 서비스 배포해보기]({% post_url 2019-06-05-how-to-set-server-to-serve-django %})를 참고하세요.   
+여기서는 웹서버로 Nginx, WSGI서버로 Gunicorn을 사용합니다. 아래 또는 [AWS Lightsail에 nginx, gunicorn, systemd를 이용해 장고(Django) 서비스 배포해보기]({% post_url 2019-06-05-how-to-set-server-to-serve-django %})를 참고하세요.
 
 ---
 
 ### Gunicorn 설치 및 설정
-`pip install gunicorn`으로 gunicorn을 설치해줍니다. 그리고 `/etc/systemd/system` 경로에 `gunicorn.service`라는 파일을 만들고 아래와 같이 설정한 후 실행(`sudo systemctl start gunicorn`), 서비스 등록(`sudo systemctl enable gunicorn`) 해줍니다. 실행은 말그대로 서비스를 실행하는 것이고, 등록은 서버 재시작 시에도 자동으로 실행되도록 해줍니다. 잘 실행되고 있는지 확인(`sudo systemctl status gunicorn`)해보세요.   
 
-**프로젝트 레이아웃**  
-```
-MYPROJECTDIRECTORY
-  - mydjango
-  - manage.py
-  - run
-  - staticfiles
-```
+`pip install gunicorn`으로 gunicorn을 설치해줍니다. 그리고 `/etc/systemd/system` 경로에 `gunicorn.service`라는 파일을 만들고 아래와 같이 설정한 후 실행(`sudo systemctl start gunicorn`), 서비스 등록(`sudo systemctl enable gunicorn`) 해줍니다. 실행은 말그대로 서비스를 실행하는 것이고, 등록은 서버 재시작 시에도 자동으로 실행되도록 해줍니다. 잘 실행되고 있는지 확인(`sudo systemctl status gunicorn`)해보세요.
 
-**systemd 스크립트**
-```
+#### 프로젝트 레이아웃
+
+> MYPROJECTDIRECTORY  
+> ㄴ mydjango  
+> ㄴ manage.py  
+> ㄴ run  
+> ㄴ staticfiles
+
+#### systemd 스크립트
+
+```config
 [Unit]
 Description=Gunicorn Service
 After=network.target
@@ -167,9 +171,10 @@ WantedBy=multi-user.target
 ---
 
 ### Nginx 설치 및 설정
-`sudo apt install nginx`로 설치하고 `/etc/nginx/sites-enabled` 파일을 `gunicorn`과 연결해줍니다.   
 
-```
+`sudo apt install nginx`로 설치하고 `/etc/nginx/sites-enabled` 파일을 `gunicorn`과 연결해줍니다.
+
+```nginx
 upstream backend {
         server unix:장고프로젝트경로/run/gunicorn.sock;
 }
@@ -200,5 +205,4 @@ server {
 
 ```
 
-`sudo systemctl restart nginx`로 웹서버 재시작하여 설정을 반영해줍니다. `sudo nginx -t` 명령으로는 nginx 설정에 문제가 있는지 검사할 수 있습니다.   
-
+`sudo systemctl restart nginx`로 웹서버 재시작하여 설정을 반영해줍니다. `sudo nginx -t` 명령으로는 nginx 설정에 문제가 있는지 검사할 수 있습니다.
