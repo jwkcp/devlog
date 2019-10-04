@@ -23,7 +23,7 @@ comments: true
 
 [losslandscape.com](https://losslandscape.com)에서는 이런 손실 함수를 눈에 보이게 만드는 프로젝트를 진행하고 있습니다. 아래 동영상을 보면 놀랍기도, 감동적이기도 한데요. 세상에는 정말 멋진 사람들이 많은 것 같습니다.
 
-![https://img.youtube.com/vi/Q3pTEtSEvDI/0.jpg](https://img.youtube.com/vi/Q3pTEtSEvDI/0.jpg)  
+![https://img.youtube.com/vi/Q3pTEtSEvDI/0.jpg](https://img.youtube.com/vi/Q3pTEtSEvDI/0.jpg)
 [https://youtu.be/Q3pTEtSEvDI](https://youtu.be/Q3pTEtSEvDI)
 
 ![https://img.youtube.com/vi/QeViLO0pU1I/0.jpg](https://img.youtube.com/vi/QeViLO0pU1I/0.jpg)  
