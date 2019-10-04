@@ -26,7 +26,7 @@ comments: true
 ![https://img.youtube.com/vi/Q3pTEtSEvDI/0.jpg](https://img.youtube.com/vi/Q3pTEtSEvDI/0.jpg)
 [https://youtu.be/Q3pTEtSEvDI](https://youtu.be/Q3pTEtSEvDI)
 
-![https://img.youtube.com/vi/QeViLO0pU1I/0.jpg](https://img.youtube.com/vi/QeViLO0pU1I/0.jpg)  
+![https://img.youtube.com/vi/QeViLO0pU1I/0.jpg](https://img.youtube.com/vi/QeViLO0pU1I/0.jpg)
 [https://youtu.be/QeViLO0pU1I](https://youtu.be/QeViLO0pU1I)
 
 [losslandscape.com](https://losslandscape.com)를 방문하면 더 많은 영상을 볼 수 있습니다.
