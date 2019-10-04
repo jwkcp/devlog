@@ -7,7 +7,7 @@ comments: true
 
 손실함수는 여러 종류가 있지만 딥러닝을 처음 시작할 때 대부분의 사람들은 아래의 그래프를 보게 됩니다.
 
-![https://miro.medium.com/max/1204/1*t6OiVIMKw3SBjNzj-lp_Fw.png](https://miro.medium.com/max/1204/1*t6OiVIMKw3SBjNzj-lp_Fw.png)
+![http://donsoft.io/deep-learning-with-rnns/images/gradient_descent_cropped.gif](http://donsoft.io/deep-learning-with-rnns/images/gradient_descent_cropped.gif)
 
 그런데 wx + b의 그래프라는 것과 미분값으로 경사의 방향을 예측하면서 간다는 사실을 머리로는 이해가 되어도 마음(?)에 잘 와닿지는 않습니다. 그런 와중에 이런 그래프나
 
