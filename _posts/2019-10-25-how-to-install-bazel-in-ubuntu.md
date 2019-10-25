@@ -53,7 +53,7 @@ sudo apt-get update
 sudo apt-get install bazel
 {% endhighlight %}
 
-`sudo apt-get update`
+`sudo apt-get update`  
 패키지 배포 목록이 새로 추가되었으니 update 해주고요.
 
 `sudo apt-get install bazel`  
