@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 외부 파일론 된 javascript 또는 jquery가 동작하지 않을 때
+title: 외부파일로 구성된 javascript 또는 jquery가 동작하지 않을 때
 tags: javascript
 comments: true
 ---
