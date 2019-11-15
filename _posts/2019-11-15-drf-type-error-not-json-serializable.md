@@ -16,9 +16,9 @@ DRF(djangorestframework)를 통해 모델을 생성하고 뷰셋을 만들었는
 {% highlight python %}
 class News(models.Model):
 title = models.CharField(max_length=100),  
- created_at = models.DateTimeField(auto_now_add=True)
+created_at = models.DateTimeField(auto_now_add=True)
 updated_at = models.DateTimeField(auto_now=True)
-{% endhighlight}
+{% endhighlight %}
 
 ## 해결 방법
 
