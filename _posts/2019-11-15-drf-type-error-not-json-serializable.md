@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TypeError Object of type CharField is not JSON serializable 가 발생한다면
+title: DRF 사용 시 Object of type CharField is not JSON serializable 가 발생한다면
 tags: django django-rest-framework
 comments: true
 ---
