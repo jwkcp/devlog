@@ -23,7 +23,7 @@ constructor(props) {
 }
 
 componentDidMount() {
-    this.ctx = this.canvasRef.current.getContext("2d)
+    this.ctx = this.canvasRef.current.getContext("2d")
 }
 
 render() {
