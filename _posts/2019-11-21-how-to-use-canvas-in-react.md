@@ -28,7 +28,7 @@ componentDidMount() {
 
 render() {
     return (
-        <canvas ref={this.canvasRef} />
+        <canvas ref={this.canvasRef}></canvas>
     )
 }
 {% endhighlight %}
