@@ -43,6 +43,11 @@ comments: true
 - psql 접속 후 실행
 `\connect 데이터베이스명 또는 \c 데이터베이스명`  
   
+#### 데이터베이스 삭제  
+
+- psql 접속 후 실행
+`drop database mydbname;`  
+  
 ---
   
 ## 사용자 다루기
