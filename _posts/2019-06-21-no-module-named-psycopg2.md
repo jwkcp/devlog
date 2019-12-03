@@ -13,7 +13,7 @@ Django의 DATABASES의 엔진을 django.db.backends.postgresql로 지정 후 ```
 ```pip install psycopg2```를 설치한다. 설치과정에서 다른 에러가 발생하는 경우, 아래의 패키지를 설치해주면 된다.
      
 ```
-sudo apt install ligpq-dev postgresql postgresql-contrib
+sudo apt install libpq-dev postgresql postgresql-contrib
 ```
 
       
