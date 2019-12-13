@@ -20,7 +20,7 @@ comments: true
 ## 해결방법
 
 1. 터미널을 열고  
-2. `/sys/module/hid_apple/parameters` 경로에 `fnmode`파일의 내용을 2로 수정  
+2. `/sys/module/hid_apple/parameters` 경로에 `fnmode`파일의 내용을 0로 수정  
 3. 저장 후 다시 fn키를 누르고 F1~F12를 눌러보면 정상적으로 동작함  
   
 ---
