@@ -16,32 +16,31 @@ comments: true
 ---
 
 **구글 플레이 스토어 관련 안내**  
-`
-Google Play requires that apps target API level 26 or higher.
 
-Inspection info: As of the second half of 2018, Google paly requires that new apps and app updates target API level 26 or higher.
+> Google Play requires that apps target API level 26 or higher.
+>
+> Inspection info: As of the second half of 2018, Google paly requires that new apps and app updates target API level 26 or higher.
+>
+> Configuring your app to target a recent API level ensures that users benefit from significant security and performance improvements, whitle still allowing your app to run on older Android verions (down to the minSdkVersion).
+>
+> To update your targetSdkVersion, follow the steps from "Meeting Google Play requirements for target API level",
+> https://developer.android.com/distribute/best-practices/develop/target-sdk.html  
+>
+> Issue Id: ExpiredTargetSdkVersion
+>
+> More info:
+> https://support.google.com/googleplay/android-developer/answer/113469#targetsdk
+> https://support.google.com/googleplay/android-developer/answer/113469#targetsdk
+> https://developer.android.com/distribute/best-practices/developer/target-sdk.html
 
-Configuring your app to target a recent API level ensures that users benefit from significant security and performance improvements, whitle still allowing your app to run on older Android verions (down to the minSdkVersion).
-
-To update your targetSdkVersion, follow the steps from "Meeting Google Play requirements for target API level",
-https://developer.android.com/distribute/best-practices/develop/target-sdk.html  
-
-Issue Id: ExpiredTargetSdkVersion
-
-More info:
-https://support.google.com/googleplay/android-developer/answer/113469#targetsdk
-https://support.google.com/googleplay/android-developer/answer/113469#targetsdk
-https://developer.android.com/distribute/best-practices/developer/target-sdk.html
-`
 
 ---
 
 **AndroidX 란**  
-`
-AndroidX는 Android 팀이 Jetpack 내에서 라이브러리를 개발, 테스트, 패키징, 버전 관리, 출시하는 데 사용하는 오픈소스 프로젝트입니다.  
-[AndroidX 개요](https://developer.android.com/jetpack/androidx)  
-[Android Jetpack](https://developer.android.com/jetpack?hl=ko)  
-`
+
+> AndroidX는 Android 팀이 Jetpack 내에서 라이브러리를 개발, 테스트, 패키징, 버전 관리, 출시하는 데 사용하는 오픈소스 프로젝트입니다.  
+> [AndroidX 개요](https://developer.android.com/jetpack/androidx)  
+> [Android Jetpack](https://developer.android.com/jetpack?hl=ko)  
   
 ---
 
