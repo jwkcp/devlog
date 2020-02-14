@@ -15,13 +15,13 @@ comments: true
 
 > Warning The fileConfig() function takes a default parameter, disable_existing_loggers, which defaults to True for reasons of backward compatibility. This may or may not be what you want, since it will cause any non-root loggers existing before the fileConfig() call to be disabled unless they (or an ancestor) are explicitly named in the configuration. Please refer to the reference documentation for more information, and specify False for this parameter if you wish.The dictionary passed to dictConfig() can also specify a Boolean value with key disable_existing_loggers, which if not specified explicitly in the dictionary also defaults to being interpreted as True. This leads to the logger-disabling behaviour described above, which may not be what you want - in which case, provide the key explicitly with a value of False.
 
-요약하면 이렇다. *"fileConfig의 `disable_existing_loggers`가 하위 호환성 때문에 활성화되어 있으니 주의하세요. `fileConfig()`가 호출되기 전 루트가 아닌 로거들은 `disable_existing_loggers` 옵션을 명시적으로 `False`로 바꾸기 전까지는 비활성화됩니다. `dictConfig()`를 사용하는 경우도 마찬가지입니다."*  
+요약하면 이렇다. _"fileConfig의 `disable_existing_loggers`가 하위 호환성 때문에 활성화되어 있으니 주의하세요. `fileConfig()`가 호출되기 전 루트가 아닌 로거들은 `disable_existing_loggers` 옵션을 명시적으로 `False`로 바꾸기 전까지는 비활성화됩니다. `dictConfig()`를 사용하는 경우도 마찬가지입니다."_
 
 # 해결방법
 
-위 설명대로 `disable_existing_loggers` 옵션을 `False`로 한.번.만 지정해주면 동작하지 않던 다른 모듈을 로그가 드디어 찍히는 것을 볼 수 있다. 이 옵션을 False하는 예는 아래와 같다.  
+위 설명대로 `disable_existing_loggers` 옵션을 `False`로 한.번.만 지정해주면 동작하지 않던 다른 모듈을 로그가 드디어 찍히는 것을 볼 수 있다. 이 옵션을 False하는 예는 아래와 같다.
 
 {% highlight python %}
 logging.config.fileConfig('logger.conf', disable_existing_loggers=False)
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(**name**)
 {% endhighlight %}
