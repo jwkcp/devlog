@@ -22,10 +22,10 @@ comments: true
 
 ## 파일 열기
 {% highlight python %}
-# 엑셀 파일 하나가 워크북(workbook)입니다.
+#엑셀 파일 하나가 워크북(workbook)입니다.
 workbook = openpyxl.load_workbook(파일경로)
 
-# 엑셀 파일에는 여러 시트가 있을 수 있습니다. 아래 코드는 활성 시트를 가져옵니다.
+#엑셀 파일에는 여러 시트가 있을 수 있습니다. 아래 코드는 활성 시트를 가져옵니다.
 worksheet = workbook.active
 {% endhighlight %}
 
@@ -53,17 +53,17 @@ shutil.copy(기존파일명, 신규파일명)
 `cell.value` or `cell.value = 새로운값`
 
 ## 셀 내용 가운데 정렬
-{% hightlight python %}
+{% highlight python %}
 from openpyxl.styles import Alignment
 
 cell.alignment = Alignment(horizontal='center')
 {% endhighlight %}
 
 ## 셀 색상 바꾸기
-{% hightlight python %}
+{% highlight python %}
 from openpyxl.styles import PatternFill, Color
 
-# 예를 들어, 연한 오렌지색일 경우
+#예를 들어, 연한 오렌지색일 경우
 fill_with_orange = PatternFill(patternType='solid', fgColor=Color("fff3bf"))
 
 cell.fill = fill_with_green
