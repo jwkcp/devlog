@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 파이썬에서 openpyxl을 이용해 엑셀 다루기 간단 요약
-tags: python
+tags: python openpyxl
 comments: true
 ---
 
