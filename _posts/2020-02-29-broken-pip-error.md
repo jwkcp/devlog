@@ -37,4 +37,8 @@ comments: true
 
 `python get-pip.py`  
 
+---
 
+## 더 알아보기
+
+[더 자세한 PyPA 설치 안내 페이지](https://pip.pypa.io/en/stable/installing/)
