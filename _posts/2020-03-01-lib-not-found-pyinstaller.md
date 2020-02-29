@@ -24,9 +24,9 @@ comments: true
 [https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)  
 
 설치 후 아래와 같은 경로에 관련 dll이 들어간다. 버전 번호 등은 좀 다를 수 있다.  
-`C:\Program Files (x86)\Windows Kits\10\Redist\10.0.18362.0\ucrt\DLLs\x64 또는 x86`  
+`C:\Program Files (x86)\Windows Kits\10\Redist\10.0.18362.0\ucrt\DLLs\x86`  
 
-x64 또는 x86 폴더를 사용하기 쉽게 `C:\windowkit\x64`로 복사했다고 가정하면 아래와 같이 pyinstaller 명령을 사용하면 된다.  
+x64 또는 x86 폴더를 사용하기 쉽게 `C:\windowkit`로 복사했다고 가정하면 아래와 같이 pyinstaller 명령을 사용하면 된다.  
 
-`pyinstaller --onefile -p c:\windowkit\x64 myfile.py`  
+`pyinstaller --onefile -p c:\windowkit myfile.py`  
 
