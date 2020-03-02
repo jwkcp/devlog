@@ -30,3 +30,7 @@ x64 또는 x86 폴더를 사용하기 쉽게 `C:\windowkit`로 복사했다고 �
 
 `pyinstaller --onefile -p c:\windowkit myfile.py`  
 
+## 그래도 에러가 나는 경우
+
+위와 같이 다 했는데도 에러가 나는 경우 윈도우를 재부팅하고 다시 시도해보면 대부분 문제가 해결된다.  
+
