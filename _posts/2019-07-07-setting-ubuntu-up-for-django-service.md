@@ -92,7 +92,7 @@ $echo 'export PYENV_VERSION=3.6.8` >> ~/.bashrc
 
 ## 의존성 설치
 
-`python install requirements.txt`
+`pip install -r requirements.txt`
 
 ---
 
