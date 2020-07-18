@@ -10,7 +10,11 @@ Django에서 사용자(User) 모델을 참조하려면 여러 방법이 있습�
 1. `get_user_model()`, from django.contrib.auth import get_user_model로 참조
 2. `AUTH_USER_MODEL`, settings.py에서 AUTH_USER_MODEL 지정 후 from django.conf import settings로 참조
 
-추천하는 방법은 `AUTH_USER_MODEL`을 이용하는 2번 방법입니다.
+추천하는 방법은 `AUTH_USER_MODEL`을 이용하는 2번 방법입니다. `settings.py` 파일에 아래와 같이 지정합니다.
+
+{% highlight python %}
+AUTH_USER_MODEL = 'auth.User'
+{% endhighlight %}
 
 ---
 
