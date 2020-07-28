@@ -17,7 +17,7 @@ comments: true
 
 사용하는 법도 쉽습니다.  
 
-1. 위 사이트에 방문합니다.
+1. 위 사이트([https://icons.getbootstrap.com/](https://icons.getbootstrap.com/))에 방문합니다.
 2. 원하는 아이콘을 고르고 클릭합니다.
 3. 하단의 Copy HTML의 코드를 복사해서 원하는 위치에 붙여 넣습니다. 끝.
 

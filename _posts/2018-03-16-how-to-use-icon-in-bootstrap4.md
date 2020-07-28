@@ -5,6 +5,11 @@ tags: how-to, bootstrap
 comments: true
 ---
   
+# 업데이트 2020.07.28
+```
+드디어 부트스트랩에서 자체적으로 아이콘을 제공하기 시작했습니다. [별도 설치 없이 부트스트랩에서 제공하는 아이콘 사용하기](https://devlog.jwgo.kr/2020/07/28/bootstrap-icon-usage/)를 확인하세요.  
+```
+
 ## 개요
 지금까지는 부트스트랩에서 아이콘을 불러 쓸 때 Glyphicons를 이용했을 것이다. [부트스트랩4 부터는 Glyphicons이 없어(Dropped)](https://getbootstrap.com/docs/4.0/migration/#components)졌다. 대신 [이용 가능한 다른 아이콘 라이브러리 목록](https://getbootstrap.com/docs/4.0/extend/icons/)을 알려준다. 2018년 3월 현재 Iconic과 Octicons는 부트스트랩에서 테스트를 했고 나머지는 테스트하진 않았지만 선택 가능한 옵션이라고 한다.
   
