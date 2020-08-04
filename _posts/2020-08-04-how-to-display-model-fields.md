@@ -5,10 +5,10 @@ tags: django
 comments: true
 ---
 
-Django(장고)에서 모델의 모든 필드를 보려면 어떻게 해야 할까요? 예를 들어, `django.contrib.auth.models`에 있는 `User` 모델에 어떤 필드가 있는지 보려면 어떻게 해야할까요? 아래와 같이 한 줄이면 됩니다.
+Django(장고)에서 모델의 모든 필드를 보려면 어떻게 해야 할까요? 예를 들어, `django.contrib.auth.models`에 있는 `User` 모델에 어떤 필드가 있는지 보려면 어떻게 해야할까요? 아래와 같이 한 줄이면 됩니다.  
 
 {% highlight python %}
-User.\_meta.get_fields()
+User._meta.get_fields()
 {% endhighlight %}
 
 그러면 아래와 같이 필드 목록이 표시됩니다.
