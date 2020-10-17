@@ -6,7 +6,7 @@ comments: true
 ---
 
 아래와 같이 웹사이트 상단에서부터 살짝 나타났다가 사라지는 메시지로 사용자에게 알림을 주는 경우를 본 적이 있을 것입니다. 장고의 메시지 라이브러리와 부트스트랩을 사용하면 이렇게 매력적인 알림을 별도의 라이브러리 없이 간단히 구현할 수 있습니다.  
-![메시지예시](https://devopspoints.com/uploads/library/bootstrap4/img_5db28f0b1a58a.png)
+![메시지예시](https://devopspoints.com/uploads/library/bootstrap4/img_5db28f0b1a58a.png, "https://devopspoints.com/uploads/library/bootstrap4/img_5db28f0b1a58a.png")
 
 ---
 
