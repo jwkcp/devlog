@@ -28,6 +28,17 @@ def is_zero(val):
 **3. settings.py에 `OPTIONS`을 사용한다.(추천)**   
 장고 1.9이후로 `settings.py`의 설정을 이용하면 더미 앱을 만들지 않고도 커스텀 템플릿 태그같은 공통모듈을 사용할 수 있습니다. 어느 위치에 설정을 해야 하는지 헷갈려합니다. 아래 예를 보시죠.   
 
+## 프로젝트 구조  
+{% raw %}
+mysite
+    - myapp
+    - mysite
+        - manage.py
+        - templatetags
+            - custom_tags.py
+{% endraw %}
+
+## SETTINGS.PY
 {% highlight django %}
 TEMPLATES = [
     {
