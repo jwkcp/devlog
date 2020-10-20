@@ -32,11 +32,11 @@ def is_zero(val):
 {% highlight django %}
 {% raw %}
 mysite
-    - myapp
-    - mysite
-        - manage.py
-        - templatetags
-            - custom_tags.py
+    L myapp
+    L mysite
+        L manage.py
+        L templatetags
+            L custom_tags.py
 {% endraw %}
 {% endhighlight %}
 
