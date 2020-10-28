@@ -56,4 +56,4 @@ TIME_ZONE = 'Asia/Seoul'
 ---
 
 ## 추천하는 시간 저장 방법
-개인적으로 시간 저장은 UTC로 하고 보여주기를 한국이면 한국 등 각 나라의 위치에 맞게 보여주는 것을 추천압니다. 장고의 경우 위와 같이 TIME_ZONE 설정을 해두면 DB에 UTC로 저장되어 있다고 하더라도 `object.update_date`와 같이 템플릿에서 보여주면 `settings.py`의 `TIME_ZONE`인 한국 시간에 맞게 자동으로 변환되어 보여집니다. 수동으로 `DateTimeField`를 업데이트해야 한다면 `timezone.now()`를 쓰시면 되고, 특별히 한국 시간(TIME_ZONE의 시간)이 필요하다면 `timezone.localtime()`을 쓰시면 됩니다.  
+개인적으로 시간 저장은 UTC로 하고 보여주기를 한국이면 한국 등 각 나라의 위치에 맞게 보여주는 것을 추천합니다. 장고의 경우 위와 같이 TIME_ZONE 설정을 해두면 DB에 UTC로 저장되어 있다고 하더라도 `object.update_date`와 같이 템플릿에서 보여주면 `settings.py`의 `TIME_ZONE`인 한국 시간에 맞게 자동으로 변환되어 보여집니다. 수동으로 `DateTimeField`를 업데이트해야 한다면 `timezone.now()`를 쓰시면 되고, 특별히 한국 시간(TIME_ZONE의 시간)이 필요하다면 `timezone.localtime()`을 쓰시면 됩니다.  
