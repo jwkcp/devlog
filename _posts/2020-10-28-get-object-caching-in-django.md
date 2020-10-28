@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 장고(Django)에서 여러 번 호출되는 get_object 함수 오버라이딩하여 효율 높이기
+title: 장고(Django)에서 CBV사용 시, 여러 번 호출되는 get_object 함수 오버라이딩하여 효율 높이기
 tags: django
 comments: true
 ---
