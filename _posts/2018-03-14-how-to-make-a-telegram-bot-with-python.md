@@ -6,7 +6,7 @@ comments: true
 ---
    
 ## 1. 메시지 주고 받기
-[텔레그램(telegram) 봇 API 응답 값 살펴보기](https://jwkcp.github.io/2018/03/13/how-to-make-custom-keyboard-in-python-using-telegram/)
+[텔레그램(telegram) 봇 API 응답 값 살펴보기](https://devlog.jwgo.kr/2018/03/09/telegram-bot-api-response-json/)
   
 ## 2. 받은 메시지 좀 더 들여다 보기
 [AWS lambda(람다) 함수 핸들러 event 변수 살펴보기(Python, POST)](https://jwkcp.github.io/2018/03/07/aws-lambda-event-object/)
