@@ -26,6 +26,8 @@ comments: true
 ---
 
 ### custom_widgets.py 위젯 본체
+길어 보이지만 대부분 주석입니다.(향후 참고용) render 함수를 유심히보시면 됩니다.  
+  
 {% highlight django+python %}
 from django.forms import ClearableFileInput
 from django.template.loader import render_to_string
@@ -40,10 +42,14 @@ class PreviewImageFileWidget(ClearableFileInput):
     #         'https://code.jquery.com/jquery-3.4.1.min.js'
     #     ]
 
+    #############################################
     # render 함수를 오버라이딩 해줍니다.
+    #############################################
     # -- value는 이미지가 들어갑니다. (여기서는 ClearableFileInput이므로)
     # -- name은 ClearableFileInput이 적용되는 우리 폼의 imagefield 이름이 들어갑니다. 이 이름은 우리가 PreviewImageFileWidget을 쓸 HTML코드에 있겠죠?
     # -- attrs에는 id 등의 값이 dict 형태로 들어갑니다.
+    ##############################################
+
     def render(self, name, value, attrs=None, renderer=None):
         # 커스텀 위젯 템플릿으로 전달할 context를 만들어주고
         context = {
@@ -78,46 +84,46 @@ class PreviewImageFileWidget(ClearableFileInput):
 
 ### preview_imagefield_widget.html 위젯 꾸미기
 {% highlight html+javascript %}{% raw %}
-    <!-- 기존이미지 -->
-    <div>
-        <img id='imagePreview' src='{{ value.url }}'/>
-        <button id='imageClearBtn' type='button'>삭제</button>
-        
-        <!-- 기존 ClearableFileInput의 삭제 기능을 활용하기 위해 위에 삭제 버튼을 누르면 체크되도록 하되 안보이게 설정 -->
-        <div class="custom-control custom-checkbox d-none">
-            <input type="checkbox" id="chk-{{ name }}" class="custom-control-input" name="chk-{{ name }}">
-            <label class="custom-control-label" for="chk-{{ name }}">이미지를 삭제하려면 체크하세요.</label>
-        </div>
-
-        <!-- 파일 업로드 폼 좀 더 예쁘게(선택사항) -->
-        <div class="custom-file">
-            <input type="file" id="{{ id }}" class="custom-file-input" name="{{ name }}" accept="image/*" style="cursor: pointer;">
-            <label for="{{ id }}" class="custom-file-label">파일 선택</label>
-        </div>
-
-        <!-- 여기서부터 스크립트 -->
-        <script>
-            <!-- 삭제 버튼이 클릭되면 이미지 안보이게 한 후 숨겨진 삭제 체크박스 값 변경 -->
-            document.getElementById('imageClearBtn').addEventListener('click', function(e) {
-                document.getElementById('imagePreview').src = "";
-                document.getElementById('chk-{{ name }}).checked = true;
-            });
-
-            // 파일 선택 이벤트 등록
-            var imgFieldCtrl = document.getElementById('{{ id }}')
-            imgFieldCtrl.addEventListener('change', function(e) {
-                if (imgFieldCtrl.files && imgFieldCtrl.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {   
-                        document.getElementById('imagePreview').src = e.target.result;
-                    }
-
-                    // convert to base64 string
-                    reader.readAsDataURL(document.getElementById('{{ id }}').files[0]); 
-                }
-            });
-        </script>
+<!-- 기존이미지 -->
+<div>
+    <img id='imagePreview' src='{{ value.url }}'/>
+    <button id='imageClearBtn' type='button'>삭제</button>
+    
+    <!-- 기존 ClearableFileInput의 삭제 기능을 활용하기 위해 위에 삭제 버튼을 누르면 체크되도록 하되 안보이게 설정 -->
+    <div class="custom-control custom-checkbox d-none">
+        <input type="checkbox" id="chk-{{ name }}" class="custom-control-input" name="chk-{{ name }}">
+        <label class="custom-control-label" for="chk-{{ name }}">이미지를 삭제하려면 체크하세요.</label>
     </div>
+
+    <!-- 파일 업로드 폼 좀 더 예쁘게(선택사항) -->
+    <div class="custom-file">
+        <input type="file" id="{{ id }}" class="custom-file-input" name="{{ name }}" accept="image/*" style="cursor: pointer;">
+        <label for="{{ id }}" class="custom-file-label">파일 선택</label>
+    </div>
+
+    <!-- 여기서부터 스크립트 -->
+    <script>
+        <!-- 삭제 버튼이 클릭되면 이미지 안보이게 한 후 숨겨진 삭제 체크박스 값 변경 -->
+        document.getElementById('imageClearBtn').addEventListener('click', function(e) {
+            document.getElementById('imagePreview').src = "";
+            document.getElementById('chk-{{ name }}).checked = true;
+        });
+
+        // 파일 선택 이벤트 등록
+        var imgFieldCtrl = document.getElementById('{{ id }}')
+        imgFieldCtrl.addEventListener('change', function(e) {
+            if (imgFieldCtrl.files && imgFieldCtrl.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {   
+                    document.getElementById('imagePreview').src = e.target.result;
+                }
+
+                // convert to base64 string
+                reader.readAsDataURL(document.getElementById('{{ id }}').files[0]); 
+            }
+        });
+    </script>
+</div>
 {% endraw %}{% endhighlight %}
 
 ---
