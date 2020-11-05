@@ -26,7 +26,7 @@ comments: true
 ---
 
 ### custom_widgets.py 위젯 본체
-길어 보이지만 대부분 주석입니다.(향후 참고용) render 함수를 유심히보시면 됩니다.  
+길어 보이지만 대부분 주석입니다. render 함수를 유심히보시면 됩니다.  
   
 {% highlight django+python %}
 from django.forms import ClearableFileInput
