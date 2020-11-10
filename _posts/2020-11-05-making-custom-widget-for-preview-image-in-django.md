@@ -14,7 +14,33 @@ comments: true
 커스컴 위젯은 장고의 기본 컨트롤만으로는 좀 부족하고, HTML과 Javascript만 쓰는게 아니라 장고의 폼과 좀 더 긴밀하게 동작해야 하는 경우 유용합니다. 물론 커스텀 위젯 내부에서는 HTML과 CSS로 모양을 꾸미고, JS로 동작을 제어를 구현합니다. 이렇게 만든 위젯을 폼에서 그냥 한 줄로 불러와주면 간단하게 다양한 기능이 들어간 위젯을 팡!팡! 찍어낼 수 있습니다. 이 글에서는 장고의 커스텀 위젯을 이용해 이미지 필드의 폼을 구현해보겠습니다. 기존 이미지가 있다면 기존 이미지를 보여주고 사용자가 새로 이미지를 업로드하면 기존 이미지 대신 새로 업로드한 이미지를 보여줄겁니다.   
 
 # 프리뷰 가능한 이미지 업로드 위젯 만들기  
-이미지를 업로드하는 기본 위젯를 템플릿에 불러보면 이게 참 있을 기능은 다 있지만 좀 부족합니다. 기존 파일은 보여주지도 않고, 업로드한 파일도 보여주지 않습니다. 그냥 URL경로와 삭제 기능이 있는 취소 체크박스만 덜렁 보여주지요. 이 이미지 필드는 모델에서 `ImageField`로 정의됩니다. 모델폼을 이용해 템플릿에 표시하면 Input 상자와 버튼이 나타나는데 이 기본 위젯은 `from django.forms import ClearableFileInput`를 임포트한 후 `ClearableFileInput`을 상속해서 만듭니다.  
+이미지를 업로드하는 기본 위젯를 템플릿에 불러보면 이게 참 있을 기능은 다 있지만 좀 부족합니다. 기존 파일은 보여주지도 않고, 업로드한 파일도 보여주지 않습니다. 그냥 URL경로와 삭제 기능이 있는 취소 체크박스만 덜렁 보여주지요. 이 이미지 필드는 모델에서 `ImageField`로 정의됩니다. 모델폼을 이용해 템플릿에 표시하면 Input 상자와 버튼이 나타나는데 이 기본 위젯은 `from django.forms import ClearableFileInput`를 임포트한 후 `ClearableFileInput`을 상속해서 만듭니다.   
+  
+**여기서 잠깐**  
+```
+폼셋을 
+{% hightlight django+python %}{% raw %}
+{{ formset.as_p }}
+{% endraw %}{% endhighlight %}
+이렇게 쓰면 상관이 없지만 각 필드를 개별적으로 템플릿에서 불러 쓴다면 잊지 말아야 할 것이 있습니다.  
+1. management_form
+2. form.id
+3. can_delete를 설정한다면 form.DELETE
+4. can_order를 설정한다면 form.ORDER
+
+{% hightlight django+python %}{% raw %}
+
+{{ formset.management_form }}
+{% if formset.can_delete %}
+    {% for form in formset %}
+    {{ form.id }}
+    {{ form.DELETE }} # 옵션에 따라 선택사항
+    {{ form.ORDER }} # 옵션에 따라 선택사항
+    {% endfor %}
+{% endif %}
+
+{% endraw %}{% endhighlight %}
+```
 
 ## 구조
 크게 아래와 같은 소스 파일로 되어 있습니다.  
