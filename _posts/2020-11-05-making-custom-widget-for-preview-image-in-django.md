@@ -17,19 +17,14 @@ comments: true
 이미지를 업로드하는 기본 위젯를 템플릿에 불러보면 이게 참 있을 기능은 다 있지만 좀 부족합니다. 기존 파일은 보여주지도 않고, 업로드한 파일도 보여주지 않습니다. 그냥 URL경로와 삭제 기능이 있는 취소 체크박스만 덜렁 보여주지요. 이 이미지 필드는 모델에서 `ImageField`로 정의됩니다. 모델폼을 이용해 템플릿에 표시하면 Input 상자와 버튼이 나타나는데 이 기본 위젯은 `from django.forms import ClearableFileInput`를 임포트한 후 `ClearableFileInput`을 상속해서 만듭니다.   
   
 **여기서 잠깐**  
-폼셋을 
-{% hightlight django+python %}{% raw %}
-{{ formset.as_p }}
-{% endraw %}{% endhighlight %}  
+폼셋을 `formset.as_p` 이렇게 쓰면 상관이 없지만 각 필드를 개별적으로 템플릿에서 불러 쓴다면 잊지 말아야 할 것이 있습니다.  
 
-이렇게 쓰면 상관이 없지만 각 필드를 개별적으로 템플릿에서 불러 쓴다면 잊지 말아야 할 것이 있습니다.  
-1. management_form
-2. form.id
-3. can_delete를 설정한다면 form.DELETE
-4. can_order를 설정한다면 form.ORDER
+1. management_form 호출
+2. form.id 템플릿에 랜더링
+3. can_delete를 설정한다면 form.DELETE 템플릿에 랜더링
+4. can_order를 설정한다면 form.ORDER 템플릿에 랜더링
   
 {% hightlight django+python %}{% raw %}
-
 {{ formset.management_form }}
 {% if formset.can_delete %}
     {% for form in formset %}
@@ -38,7 +33,6 @@ comments: true
     {{ form.ORDER }} # 옵션에 따라 선택사항
     {% endfor %}
 {% endif %}
-
 {% endraw %}{% endhighlight %}
     
 ---
