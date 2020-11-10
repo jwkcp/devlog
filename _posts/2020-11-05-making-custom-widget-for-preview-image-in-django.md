@@ -20,25 +20,15 @@ comments: true
 폼셋을 
 {% hightlight django+python %}{% raw %}
 {{ formset.as_p }}
-{% endraw %}{% endhighlight %}
+{% endraw %}{% endhighlight %}  
+
 이렇게 쓰면 상관이 없지만 각 필드를 개별적으로 템플릿에서 불러 쓴다면 잊지 말아야 할 것이 있습니다.  
 1. management_form
 2. form.id
 3. can_delete를 설정한다면 form.DELETE
 4. can_order를 설정한다면 form.ORDER
 
-{% hightlight django+python %}{% raw %}
-
-{{ formset.management_form }}
-{% if formset.can_delete %}
-    {% for form in formset %}
-    {{ form.id }}
-    {{ form.DELETE }} # 옵션에 따라 선택사항
-    {{ form.ORDER }} # 옵션에 따라 선택사항
-    {% endfor %}
-{% endif %}
-
-{% endraw %}{% endhighlight %}
+---
 
 ## 구조
 크게 아래와 같은 소스 파일로 되어 있습니다.  
