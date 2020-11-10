@@ -23,17 +23,6 @@ comments: true
 2. form.id 템플릿에 랜더링
 3. can_delete를 설정한다면 form.DELETE 템플릿에 랜더링
 4. can_order를 설정한다면 form.ORDER 템플릿에 랜더링
-  
-{% hightlight django+python %}{% raw %}
-{{ formset.management_form }}
-{% if formset.can_delete %}
-    {% for form in formset %}
-    {{ form.id }}
-    {{ form.DELETE }} # 옵션에 따라 선택사항
-    {{ form.ORDER }} # 옵션에 따라 선택사항
-    {% endfor %}
-{% endif %}
-{% endraw %}{% endhighlight %}
     
 ---
 
