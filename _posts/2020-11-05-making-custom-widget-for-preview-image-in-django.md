@@ -27,7 +27,20 @@ comments: true
 2. form.id
 3. can_delete를 설정한다면 form.DELETE
 4. can_order를 설정한다면 form.ORDER
+  
+{% hightlight django+python %}{% raw %}
 
+{{ formset.management_form }}
+{% if formset.can_delete %}
+    {% for form in formset %}
+    {{ form.id }}
+    {{ form.DELETE }} # 옵션에 따라 선택사항
+    {{ form.ORDER }} # 옵션에 따라 선택사항
+    {% endfor %}
+{% endif %}
+
+{% endraw %}{% endhighlight %}
+    
 ---
 
 ## 구조
