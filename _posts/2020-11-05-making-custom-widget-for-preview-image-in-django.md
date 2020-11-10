@@ -23,6 +23,8 @@ comments: true
 2. form.id 템플릿에 랜더링
 3. can_delete를 설정한다면 form.DELETE 템플릿에 랜더링
 4. can_order를 설정한다면 form.ORDER 템플릿에 랜더링
+
+[장고 공식 문서](https://docs.djangoproject.com/ko/3.1/topics/forms/formsets/#manually-rendered-can-delete-and-can-order)  
     
 ---
 
