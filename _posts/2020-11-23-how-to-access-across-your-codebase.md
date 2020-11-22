@@ -58,3 +58,7 @@ TEMPLATES = [
 {{ menu_list }}
 {% endraw %}{% endhighlight %}
   
+---
+
+## 주의할 점
+이렇게 `context_processors`를 사용하는 함수는 모든 웹페이지가 열릴 때 호출될 가능성이 높기 때문에 ORM쿼리가 무거우면 안됩니다. 그러면 사이트가 전체적으로 느려집니다.  
