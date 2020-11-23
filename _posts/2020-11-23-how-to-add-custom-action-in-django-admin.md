@@ -34,6 +34,22 @@ def my_action(modeladmin, request, queryset):
 
 더블 언더스코어가 좀 낯설 수 있는데 걱정하지 마세요. 이렇게 언더스코어 두 개를 쓰면 참조하는 외래키의 컬럼에 접근할 수 있는 편리한 기능이랍니다.  
 
+잠깐, 어드민에서 복수 개의 항목을 선택하면 위 쿼리셋으로 계산된 값이 모든 컬럼에 업데이트 됩니다. 경우에 따라 이런 동작이 의도한 동작이 아닐 수 있습니다. 각 항목을 개별적으로 계산해서 업데이트 하고 싶다면 list() 등으로 쿼리셋을 평가(DB접근)하여 값을 업데이트 할 수 있습니다.  
+
+{% highlight django+python %}
+from django.db.models import Avg
+
+
+def my_action(modeladmin, request, queryset):
+    for student in list(queryset):
+        # 평균 계산
+        grade_avg = student.test.aggregate(Avg('grade')).get('grade__avg')
+
+        # aggregate는 계산 결과를 dict로 리턴하고, get으로 접근하면 해당 키가 없으면 None을 리턴합니다.
+        student.grade_avg = grade_avg if grade_avg else 0
+        student.save()
+{% endhighlight %}
+
 ---
 
 ## 2. StudentAdmin에 추가하기
