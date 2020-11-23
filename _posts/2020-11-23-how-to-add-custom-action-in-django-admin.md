@@ -39,12 +39,14 @@ def my_action(modeladmin, request, queryset):
 ## 2. StudentAdmin에 추가하기
 게속 `Student` 모델을 다루고 있으므로 어드민 클래스 이름을 `StudentAdmin`이라고 하겠습니다.  
 
+{% highlight django+python %}
 class StudentAdmin(admin.ModelAdmin):
     # 여기에 어드민 리스트에서 보일 필드를 쓰는 건 알고 계시죠?
     list_display = ['...'] 
 
     # 비슷하게 이렇게 액션을 추가해줍니다. 이게 끝이에요. 간단하죠?
     actions = ['my_action', ]
+{% endhighlight %}
 
 ---
 
