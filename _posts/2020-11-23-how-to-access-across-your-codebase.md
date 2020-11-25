@@ -61,4 +61,5 @@ TEMPLATES = [
 ---
 
 ## 주의할 점
-이렇게 `context_processors`를 사용하는 함수는 모든 웹페이지가 열릴 때 호출될 가능성이 높기 때문에 ORM쿼리가 무거우면 안됩니다. 그러면 사이트가 전체적으로 느려집니다.  
+1. 이렇게 `context_processors`를 사용하는 함수는 모든 웹페이지가 열릴 때 호출될 가능성이 높기 때문에 ORM쿼리가 무거우면 안됩니다. 그러면 사이트가 전체적으로 느려집니다.  
+2. `request.user`를 호출할때는 로그인하지 않은 사용자(AnonymousUser)인 경우가 있다는 것을 잊으면 안됩니다. 그렇지 않으면 `'AnonymousUser' object is not iterable` 이런 에러가 날꺼에요.  
