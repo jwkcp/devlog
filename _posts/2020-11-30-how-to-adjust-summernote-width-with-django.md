@@ -7,7 +7,9 @@ comments: true
 
 ## 썸머노트
 
-장고에서 summernote를 사용하는 방법은 간단합니다. 설치(`pip install django-summernote`)하고, 앱에 추가(`INSTALLED_APPS += ('django_summernote', )`)해주고, URL 패턴 넣어주고(`url(r'^summernote/', include('django_summernote.urls')),`), MEDIA_URL 넣어주고(`if settings.DEBUG: urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)`) DB마이그레이션(`python manage.py migrate`)해주고 나면 폼에서 `SummernoteWidget()`을 위젯에 대입해주거나, `SummernoteTextFormField`를 필드로 생성해주면 끝이죠. (쓰고 보니 기네요.)  
+장고에서 summernote를 사용하는 방법은 간단합니다.   
+
+설치(`pip install django-summernote`)하고, 앱에 추가(`INSTALLED_APPS += ('django_summernote', )`)해주고, URL 패턴 넣어주고(`url(r'^summernote/', include('django_summernote.urls')),`), MEDIA_URL 넣어주고(`if settings.DEBUG: urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)`) DB마이그레이션(`python manage.py migrate`)해주고 나면 폼에서 `SummernoteWidget()`을 위젯에 대입해주거나, `SummernoteTextFormField`를 필드로 생성해주면 끝이죠. (쓰고 보니 기네요.)  
 
 이런 내용은 `django-summernote` [깃헙 페이지](https://github.com/summernote/django-summernote)에 순서대로 잘 설명되어 있습니다. 
 
