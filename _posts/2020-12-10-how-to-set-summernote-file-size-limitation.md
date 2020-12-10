@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 장고(Django)에서 썸머노트(summernote) 첨무 파일 사이즈 용량 제한 설정 방법
+title: 장고(Django)에서 썸머노트(summernote) 첨부 파일 사이즈 용량 제한 설정 방법
 tags: django summernote
 comments: true
 ---
@@ -26,7 +26,7 @@ def get_default_config(self):
         'attachment_storage_class': None,
 
         'attachment_filesize_limit': 1024 * 1024,
-        
+
         'attachment_require_authentication': False,
         'attachment_model': 'django_summernote.Attachment',
         'attachment_absolute_uri': False,
