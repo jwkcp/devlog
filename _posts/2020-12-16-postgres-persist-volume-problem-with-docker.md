@@ -56,7 +56,7 @@ postgresql은 기본적으로 도커로 올리면 자체 볼륨을 생성합니�
 - `--name`로 이름을 입력하면 길고 복잡한 컨테이너ID를 대신 할 수 있습니다.  
 - `--rm` 옵션을 주면 컨테이너 종료 시 자동으로 삭제됩니다.  
 - `-e POSTGRES_PASSWORD=비밀번호`를 주지 않으면 postgresql 서비스가 올라가지 않습니다. 쉽게 말하면 초기 비밀번호를 주는 것입니다.
-- 이후, `docker exec -it mydb(내가올린postgresql도커이름) bash`하면 쉘 접속할 수 있고 `psql -U postgres`하면 디비에 접속 할 수 있습니다.
+- 이후, `docker exec -it mydb(컨테이너이름) bash`하면 쉘 접속할 수 있고 `psql -U postgres`하면 디비에 접속 할 수 있습니다.
 - 사용자도 만들어보고(`create user myuser password 'secret' superuser;`) 디비도 만들어(`create database mydatabase owner myuser;`) 보세요. `\c mydb`로 해당 디비에 연결하고, `\l`로 디비 목록도 볼 수 있고, `\dt`로 테이블 목록도 볼 수 있습니다.  
 
 __
