@@ -6,7 +6,7 @@ comments: true
 ---
 Django를 이용해 RESTful 서비스를 구현하기 위해선 django-rest-framework라는 훌륭한 패키지가 있다. 이 패키지는 여기에 가면 즉시 구현해볼 수 있는 예제와 함께 자세한 사항이 기록돼 있다. 아래 그림은 이 패키지의 문서를 보면서 전체 구조를 한번에 그려보기 위해 [QuickStart 문서](http://www.django-rest-framework.org/#quickstart "QuickStart 문서")를 보고 나름대로 정리해 그려본 것이다. 아래 그림이 이 포스팅에서 말하고자 하는 전부다.
 
-[![DRF_WORKFLOW.png](https://s26.postimg.org/v34ir82nt/DRF_WORKFLOW.png)](https://postimg.org/image/vsnb3l379/)
+[![DRF-WORKFLOW.png](https://i.postimg.cc/k4YTrH0c/DRF-WORKFLOW.png)](https://postimg.cc/7G730KYG)
 
 ---
 
