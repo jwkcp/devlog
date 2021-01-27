@@ -4,8 +4,8 @@ title: 한눈에 보는 Django Rest Framework 뷰의 진화
 tags: django at-a-glance drf
 comments: true
 ---
-[![rest_framework_slide1.png](https://s26.postimg.org/untr54a61/rest_framework_slide1.png)](https://postimg.org/image/dajgq9eut/)
-[![rest_framework_slide2.png](https://s26.postimg.org/f3mdel01l/rest_framework_slide2.png)](https://postimg.org/image/m6u8u75h1/)
+[![rest-framework-slide1.png](https://i.postimg.cc/MT3W0QcD/rest-framework-slide1.png)](https://postimg.cc/S28Fkjf2)
+[![rest-framework-slide2.png](https://i.postimg.cc/63bv7TBs/rest-framework-slide2.png)](https://postimg.cc/YGg9Zr48)
 
 위 그림은 Django 뷰의 구현 방식의 진화를 한 눈에 살펴보기 위해 그려본 것이다. Generic class-based view를 보면 SnippetList와 SnippetDetail에 중복된 코드가 있다. 이를 더 간결하고 쉽게 사용하기 위해 django-rest-framework에서는 **Viewset**을 제공하고 있다.
 
